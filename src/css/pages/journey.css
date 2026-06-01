@@ -1,0 +1,95 @@
+/* ===== Journey Map Specific Styles ===== */
+.map-legend {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-color {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.legend-color.visited {
+  background-color: #22c55e;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.legend-color.future {
+  background-color: #f97316;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.map-container-wrapper {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px var(--card-shadow), 0 2px 4px -1px var(--card-shadow);
+  border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
+  margin-bottom: 2rem;
+  background: var(--card-bg);
+}
+
+.journey-map {
+  height: 60vh;
+  min-height: 400px;
+  width: 100%;
+  z-index: 1; /* Keep map behind sidebar */
+}
+
+/* Dark mode overrides for map tiles (creates a darker look for the map itself) */
+[data-theme="dark"] .leaflet-layer,
+[data-theme="dark"] .leaflet-control-zoom-in,
+[data-theme="dark"] .leaflet-control-zoom-out,
+[data-theme="dark"] .leaflet-control-attribution {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+[data-theme="dark"] .leaflet-container {
+  background: #000;
+}
+
+/* Marker popup styles */
+.leaflet-popup-content-wrapper {
+  background: var(--card-bg) !important;
+  color: var(--text) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 6px -1px var(--card-shadow) !important;
+  border: 1px solid var(--card-border, rgba(0,0,0,0.1)) !important;
+}
+
+.leaflet-popup-tip {
+  background: var(--card-bg) !important;
+  border-bottom: 1px solid var(--card-border, rgba(0,0,0,0.1)) !important;
+  border-right: 1px solid var(--card-border, rgba(0,0,0,0.1)) !important;
+}
+
+.leaflet-popup-content {
+  margin: 12px 16px !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+}
+
+.popup-title {
+  margin: 0 0 4px 0 !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  color: var(--heading) !important;
+}
+
+.popup-status {
+  margin: 0 !important;
+  font-size: 0.85rem !important;
+  color: var(--text-muted) !important;
+}
