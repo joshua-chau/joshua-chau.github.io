@@ -1,3 +1,12 @@
+/* ===== Hero Section for Professions ===== */
+.hero-section {
+  min-height: calc(100vh - 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
 /* ===== Resume Section ===== */
 .resume-section {
   margin-bottom: 3rem;
