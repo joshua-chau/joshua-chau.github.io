@@ -3,6 +3,7 @@
 @import './components/sidebar.css';
 @import './components/profile.css';
 @import './components/timeline.css';
+@import './components/horizontal-timeline.css';
 @import './components/buttons.css';
 @import './pages/resume.css';
 @import './pages/journey.css';
