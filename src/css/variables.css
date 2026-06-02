@@ -34,7 +34,11 @@
 
 [data-theme="dark"] {
   --bg: #0d1117;
-  --bg-glow: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(30, 64, 130, 0.25) 0%, transparent 70%);
+  --bg-glow: radial-gradient(
+    ellipse 60% 50% at 50% 50%,
+    rgba(30, 64, 130, 0.25) 0%,
+    transparent 70%
+  );
   --text: #e6edf3;
   --text-muted: #8b949e;
   --heading: #e6edf3;
@@ -64,4 +68,3 @@
   --linkedin-hover: #79c0ff;
   --note-color: #8b949e;
 }
-

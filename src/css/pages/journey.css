@@ -23,20 +23,22 @@
 .legend-color.visited {
   background-color: #22c55e;
   border: 2px solid white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .legend-color.future {
   background-color: #f97316;
   border: 2px solid white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .map-container-wrapper {
   width: 100%;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 6px -1px var(--card-shadow), 0 2px 4px -1px var(--card-shadow);
+  box-shadow:
+    0 4px 6px -1px var(--card-shadow),
+    0 2px 4px -1px var(--card-shadow);
   border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
   margin-bottom: 2rem;
   background: var(--card-bg);
@@ -67,13 +69,13 @@
   color: var(--text) !important;
   border-radius: 8px !important;
   box-shadow: 0 4px 6px -1px var(--card-shadow) !important;
-  border: 1px solid var(--card-border, rgba(0,0,0,0.1)) !important;
+  border: 1px solid var(--card-border, rgba(0, 0, 0, 0.1)) !important;
 }
 
 .leaflet-popup-tip {
   background: var(--card-bg) !important;
-  border-bottom: 1px solid var(--card-border, rgba(0,0,0,0.1)) !important;
-  border-right: 1px solid var(--card-border, rgba(0,0,0,0.1)) !important;
+  border-bottom: 1px solid var(--card-border, rgba(0, 0, 0, 0.1)) !important;
+  border-right: 1px solid var(--card-border, rgba(0, 0, 0, 0.1)) !important;
 }
 
 .leaflet-popup-content {
@@ -100,10 +102,14 @@
   padding: 1.5rem;
   background: var(--card-bg);
   border-radius: 12px;
-  box-shadow: 0 4px 6px -1px var(--card-shadow), 0 2px 4px -1px var(--card-shadow);
+  box-shadow:
+    0 4px 6px -1px var(--card-shadow),
+    0 2px 4px -1px var(--card-shadow);
   border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
   margin-bottom: 2rem;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .photos-section.hidden {

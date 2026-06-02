@@ -1,102 +1,159 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journey | Joshua Chau</title>
+    <link rel="icon" href="/pics/web-logo.png" type="image/png" />
+    <meta
+      name="description"
+      content="A map of places Joshua Chau has visited and hopes to visit in the future."
+    />
+    <meta property="og:title" content="Journey | Joshua Chau" />
+    <meta
+      property="og:description"
+      content="A map of places Joshua Chau has visited and hopes to visit in the future."
+    />
+    <meta
+      property="og:image"
+      content="https://tsztungchau-jo.github.io/pics/web-logo.png"
+    />
+    <meta
+      property="og:url"
+      content="https://tsztungchau-jo.github.io/journey.html"
+    />
+    <meta property="og:type" content="website" />
+    <script>
+      // Apply saved theme immediately to prevent flash of wrong theme
+      (function () {
+        var theme =
+          localStorage.getItem("theme") ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <link rel="stylesheet" href="/src/css/style.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Journey | Joshua Chau</title>
-  <link rel="icon" href="/pics/web-logo.png" type="image/png" />
-  <meta name="description"
-    content="A map of places Joshua Chau has visited and hopes to visit in the future." />
-  <meta property="og:title" content="Journey | Joshua Chau" />
-  <meta property="og:description" content="A map of places Joshua Chau has visited and hopes to visit in the future." />
-  <meta property="og:image" content="https://tsztungchau-jo.github.io/pics/web-logo.png" />
-  <meta property="og:url" content="https://tsztungchau-jo.github.io/journey.html" />
-  <meta property="og:type" content="website" />
-  <script>
-    // Apply saved theme immediately to prevent flash of wrong theme
-    (function () {
-      var theme = localStorage.getItem('theme')
-        || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-  </script>
-  <link rel="stylesheet" href="/src/css/style.css" />
-  
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
-  
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
 
-  <script type="module" src="/src/js/main.js"></script>
-  <script type="module" src="/src/js/journey.js"></script>
-</head>
+    <!-- Leaflet JS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
 
-<body>
-  <!-- Sidebar Toggle Button -->
-  <button id="sidebarToggle" class="sidebar-toggle" aria-label="Close sidebar" title="Close sidebar">☰</button>
-  <!-- Mobile Backdrop -->
-  <div id="sidebarBackdrop" class="backdrop"></div>
+    <script type="module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/journey.js"></script>
+  </head>
 
-  <header class="sidebar">
-    <!-- Theme Toggle Button (inside sidebar) -->
-    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme"></button>
-    <h2>Joshua Chau</h2>
-    <nav>
-      <a href="index.html">About</a>
-      <a href="journal.html">Journal</a>
-      <a href="professions.html">Professions</a>
-      <a href="journey.html" class="active">Journey</a>
-    </nav>
-  </header>
+  <body>
+    <!-- Sidebar Toggle Button -->
+    <button
+      id="sidebarToggle"
+      class="sidebar-toggle"
+      aria-label="Close sidebar"
+      title="Close sidebar"
+    >
+      ☰
+    </button>
+    <!-- Mobile Backdrop -->
+    <div id="sidebarBackdrop" class="backdrop"></div>
 
-  <div class="content-wrapper">
+    <header class="sidebar">
+      <!-- Theme Toggle Button (inside sidebar) -->
+      <button
+        id="themeToggle"
+        class="theme-toggle"
+        aria-label="Toggle theme"
+        title="Toggle theme"
+      ></button>
+      <h2>Joshua Chau</h2>
+      <nav>
+        <a href="index.html">About</a>
+        <a href="journal.html">Journal</a>
+        <a href="professions.html">Professions</a>
+        <a href="journey.html" class="active">Journey</a>
+      </nav>
+    </header>
 
-    <main>
-      <section class="intro fade-in">
-        <h2>My Journey</h2>
-        <p>A map pinpointing places I've been and where I'm hoping to visit in the future.</p>
-        
-        <div class="map-legend">
-          <span class="legend-item"><span class="legend-color visited"></span> Visited</span>
-          <span class="legend-item"><span class="legend-color future"></span> Future</span>
-        </div>
-        
-        <div class="map-container-wrapper">
-          <div id="journeyMap" class="journey-map"></div>
-        </div>
+    <div class="content-wrapper">
+      <main>
+        <section class="intro fade-in">
+          <h2>My Journey</h2>
+          <p>
+            A map pinpointing places I've been and where I'm hoping to visit in
+            the future.
+          </p>
 
-        <div id="photos-section" class="photos-section hidden">
-          <h3 id="photos-title">Photos</h3>
-          <div class="photos-grid">
-            <p class="placeholder-text">To be updated... (photos collection being developed continually)</p>
+          <div class="map-legend">
+            <span class="legend-item"
+              ><span class="legend-color visited"></span> Visited</span
+            >
+            <span class="legend-item"
+              ><span class="legend-color future"></span> Future</span
+            >
           </div>
-        </div>
-      </section>
-    </main>
 
-    <footer>
-      <a href="https://github.com/TszTungChau-Jo" target="_blank" rel="noopener noreferrer" title="View on GitHub"
-        class="github-btn">
-        <svg aria-hidden="true" width="24" height="24" fill="currentColor" style="width: 24px; height: 24px;">
-          <use href="/pics/icons.svg#github"></use>
-        </svg>
-      </a>
-      <a href="https://www.linkedin.com/in/tsz-tung-chau/" target="_blank" rel="noopener noreferrer"
-        title="View on LinkedIn" class="linkedin-btn">
-        <svg aria-hidden="true" width="24" height="24" fill="currentColor" style="width: 24px; height: 24px;">
-          <use href="/pics/icons.svg#linkedin"></use>
-        </svg>
-      </a>
-    </footer>
+          <div class="map-container-wrapper">
+            <div id="journeyMap" class="journey-map"></div>
+          </div>
 
-  </div>
+          <div id="photos-section" class="photos-section hidden">
+            <h3 id="photos-title">Photos</h3>
+            <div class="photos-grid">
+              <p class="placeholder-text">
+                To be updated... (photos collection being developed continually)
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
 
-</body>
-
+      <footer>
+        <a
+          href="https://github.com/TszTungChau-Jo"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="View on GitHub"
+          class="github-btn"
+        >
+          <svg
+            aria-hidden="true"
+            width="24"
+            height="24"
+            fill="currentColor"
+            style="width: 24px; height: 24px"
+          >
+            <use href="/pics/icons.svg#github"></use>
+          </svg>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/tsz-tung-chau/"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="View on LinkedIn"
+          class="linkedin-btn"
+        >
+          <svg
+            aria-hidden="true"
+            width="24"
+            height="24"
+            fill="currentColor"
+            style="width: 24px; height: 24px"
+          >
+            <use href="/pics/icons.svg#linkedin"></use>
+          </svg>
+        </a>
+      </footer>
+    </div>
+  </body>
 </html>

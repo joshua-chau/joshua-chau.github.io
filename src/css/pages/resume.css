@@ -242,7 +242,9 @@
 }
 
 [data-theme="dark"] .project-card:hover {
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4), 0 0 30px rgba(59, 130, 246, 0.08);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(59, 130, 246, 0.08);
 }
 
 .project-icon {
@@ -579,13 +581,13 @@
     flex-direction: column;
     text-align: center;
   }
-  
+
   .quote-mark {
     align-self: center;
     margin-top: 0;
     margin-bottom: -1.5rem;
   }
-  
+
   .zh-quote {
     font-size: 1.2rem;
   }

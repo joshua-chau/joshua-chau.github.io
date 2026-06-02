@@ -1,423 +1,619 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professions | Joshua Chau</title>
+    <link rel="icon" href="/pics/web-logo.png" type="image/png" />
+    <meta
+      name="description"
+      content="Professions and Portfolio of Joshua Chau — Computer Engineering student at the University of Toronto with experience in software performance engineering and machine learning research."
+    />
+    <meta property="og:title" content="Professions | Joshua Chau" />
+    <meta
+      property="og:description"
+      content="Professions and Portfolio of Joshua Chau — Computer Engineering student at the University of Toronto with experience in software performance engineering and machine learning research."
+    />
+    <meta
+      property="og:image"
+      content="https://tsztungchau-jo.github.io/pics/web-logo.png"
+    />
+    <meta
+      property="og:url"
+      content="https://tsztungchau-jo.github.io/professions.html"
+    />
+    <meta property="og:type" content="website" />
+    <script>
+      // Apply saved theme immediately to prevent flash of wrong theme
+      (function () {
+        var theme =
+          localStorage.getItem("theme") ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <script type="module" src="/src/js/main.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Professions | Joshua Chau</title>
-  <link rel="icon" href="/pics/web-logo.png" type="image/png" />
-  <meta name="description"
-    content="Professions and Portfolio of Joshua Chau — Computer Engineering student at the University of Toronto with experience in software performance engineering and machine learning research." />
-  <meta property="og:title" content="Professions | Joshua Chau" />
-  <meta property="og:description" content="Professions and Portfolio of Joshua Chau — Computer Engineering student at the University of Toronto with experience in software performance engineering and machine learning research." />
-  <meta property="og:image" content="https://tsztungchau-jo.github.io/pics/web-logo.png" />
-  <meta property="og:url" content="https://tsztungchau-jo.github.io/professions.html" />
-  <meta property="og:type" content="website" />
-  <script>
-    // Apply saved theme immediately to prevent flash of wrong theme
-    (function () {
-      var theme = localStorage.getItem('theme')
-        || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-  </script>
-  <link rel="stylesheet" href="/src/css/style.css" />
-  <script type="module" src="/src/js/main.js"></script>
-</head>
+  <body>
+    <!-- Sidebar Toggle Button -->
+    <button
+      id="sidebarToggle"
+      class="sidebar-toggle"
+      aria-label="Close sidebar"
+      title="Close sidebar"
+    >
+      ☰
+    </button>
+    <!-- Mobile Backdrop -->
+    <div id="sidebarBackdrop" class="backdrop"></div>
 
-<body>
-  <!-- Sidebar Toggle Button -->
-  <button id="sidebarToggle" class="sidebar-toggle" aria-label="Close sidebar" title="Close sidebar">☰</button>
-  <!-- Mobile Backdrop -->
-  <div id="sidebarBackdrop" class="backdrop"></div>
+    <header class="sidebar">
+      <!-- Theme Toggle Button (inside sidebar) -->
+      <button
+        id="themeToggle"
+        class="theme-toggle"
+        aria-label="Toggle theme"
+        title="Toggle theme"
+      ></button>
+      <h2>Joshua Chau</h2>
+      <nav>
+        <a href="index.html">About</a>
+        <a href="journal.html">Journal</a>
+        <a href="professions.html" class="active">Professions</a>
+        <a href="journey.html">Journey</a>
+      </nav>
+    </header>
 
-  <header class="sidebar">
-    <!-- Theme Toggle Button (inside sidebar) -->
-    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme"></button>
-    <h2>Joshua Chau</h2>
-    <nav>
-      <a href="index.html">About</a>
-      <a href="journal.html">Journal</a>
-      <a href="professions.html" class="active">Professions</a>
-      <a href="journey.html">Journey</a>
-    </nav>
-  </header>
-
-  <div class="content-wrapper">
-    <main>
-
-      <!-- ===== Top Viewport Wrapper ===== -->
-      <div class="hero-section">
-        <!-- ===== Header & Summary ===== -->
-        <section class="resume-section">
-          <h1>Joshua Chau</h1>
-        <p class="resume-summary">
-          Computer Engineering undergraduate with professional experience in software performance engineering and
-          machine learning research. Experienced in microservice architecture, automated testing frameworks, and
-          cloud-based deployments using Python and Docker. Interested in the intersection of AI-enhanced systems and
-          engineering leadership to deliver performant, intelligent software solutions.
-        </p>
-        <div class="resume-contact">
-          <button type="button" class="contact-btn email-btn copy-email-btn" title="Copy Email">
-            <svg aria-hidden="true" width="20" height="20" fill="currentColor" style="width: 20px; height: 20px;">
-              <use href="/pics/icons.svg#email"></use>
-            </svg>
-            <span class="email-text">Email</span>
-          </button>
-          <a href="https://github.com/TszTungChau-Jo" target="_blank" rel="noopener noreferrer" title="GitHub">
-            <svg aria-hidden="true" width="20" height="20" fill="currentColor" style="width: 20px; height: 20px;">
-              <use href="/pics/icons.svg#github"></use>
-            </svg>
-            <span>GitHub</span>
-          </a>
-          <a href="https://www.linkedin.com/in/tsz-tung-chau/" target="_blank" rel="noopener noreferrer"
-            title="LinkedIn">
-            <svg aria-hidden="true" width="20" height="20" fill="currentColor" style="width: 20px; height: 20px;">
-              <use href="/pics/icons.svg#linkedin"></use>
-            </svg>
-            <span>LinkedIn</span>
-          </a>
-          <a href="/docs/JoshuaTTC_resume.pdf" target="_blank" title="View Resume PDF">
-            <svg aria-hidden="true" width="20" height="20" fill="currentColor" style="width: 20px; height: 20px;">
-              <use href="/pics/icons.svg#download"></use>
-            </svg>
-            <span>View PDF</span>
-          </a>
-        </div>
-      </section>
-
-      <!-- ===== Philosophy ===== -->
-      <section class="resume-section">
-        <div class="philosophy-card">
-          <div class="quote-mark">"</div>
-          <div class="philosophy-content">
-            <h3 class="zh-quote">大學之道，在明明德，在親民，在止於至善。</h3>
-            <p class="en-quote">"The way of great learning consists in manifesting one's bright virtue, loving the people, and resting in the highest excellence."</p>
-            <p class="philosophy-author">— 大學 (The Great Learning)</p>
-          </div>
-        </div>
-      </section>
-      </div>
-
-      <!-- ===== Education ===== -->
-      <section class="resume-section fade-in">
-        <h2 class="section-title">
-          <svg aria-hidden="true" width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
-          </svg>
-          Education
-        </h2>
-        <div class="edu-card">
-          <div class="edu-header">
-            <div>
-              <h3>University of Toronto</h3>
-              <p class="edu-subtitle">Toronto, Ontario, CA</p>
-              <p class="edu-degree">Bachelor of Applied Science in Computer Engineering (CE) Candidate</p>
+    <div class="content-wrapper">
+      <main>
+        <!-- ===== Top Viewport Wrapper ===== -->
+        <div class="hero-section">
+          <!-- ===== Header & Summary ===== -->
+          <section class="resume-section">
+            <h1>Joshua Chau</h1>
+            <p class="resume-summary">
+              Computer Engineering undergraduate with professional experience in
+              software performance engineering and machine learning research.
+              Experienced in microservice architecture, automated testing
+              frameworks, and cloud-based deployments using Python and Docker.
+              Interested in the intersection of AI-enhanced systems and
+              engineering leadership to deliver performant, intelligent software
+              solutions.
+            </p>
+            <div class="resume-contact">
+              <button
+                type="button"
+                class="contact-btn email-btn copy-email-btn"
+                title="Copy Email"
+              >
+                <svg
+                  aria-hidden="true"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  style="width: 20px; height: 20px"
+                >
+                  <use href="/pics/icons.svg#email"></use>
+                </svg>
+                <span class="email-text">Email</span>
+              </button>
+              <a
+                href="https://github.com/TszTungChau-Jo"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="GitHub"
+              >
+                <svg
+                  aria-hidden="true"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  style="width: 20px; height: 20px"
+                >
+                  <use href="/pics/icons.svg#github"></use>
+                </svg>
+                <span>GitHub</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/tsz-tung-chau/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LinkedIn"
+              >
+                <svg
+                  aria-hidden="true"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  style="width: 20px; height: 20px"
+                >
+                  <use href="/pics/icons.svg#linkedin"></use>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+              <a
+                href="/docs/JoshuaTTC_resume.pdf"
+                target="_blank"
+                title="View Resume PDF"
+              >
+                <svg
+                  aria-hidden="true"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  style="width: 20px; height: 20px"
+                >
+                  <use href="/pics/icons.svg#download"></use>
+                </svg>
+                <span>View PDF</span>
+              </a>
             </div>
-            <div class="edu-meta edu-meta-horizontal">
-              <span class="edu-date">Sep 2021 – June 2026 (Expected)</span>
-              <span class="gpa-badge">GPA: 3.6 / 4.0</span>
-            </div>
-          </div>
-          <div class="edu-details">
-            <div class="awards-row">
-              <span class="award-chip">🤖 AI Engineering Minor</span>
-              <span class="award-chip">🎓 Engineering Leadership Certificate</span>
-            </div>
-            <div class="awards-row" style="margin-top: 0;">
-              <span class="award-chip incoming-chip">🎓 Incoming MEng Candidate (Fall 2026)</span>
-            </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <!-- ===== Professional Experience ===== -->
-      <section class="resume-section fade-in">
-        <h2 class="section-title">
-          <svg aria-hidden="true" width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
-          </svg>
-          Professional Experience
-        </h2>
-        <div class="timeline">
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <h3>Intern Software Performance Engineer</h3>
+          <!-- ===== Philosophy ===== -->
+          <section class="resume-section">
+            <div class="philosophy-card">
+              <div class="quote-mark">"</div>
+              <div class="philosophy-content">
+                <h3 class="zh-quote">
+                  大學之道，在明明德，在親民，在止於至善。
+                </h3>
+                <p class="en-quote">
+                  "The way of great learning consists in manifesting one's
+                  bright virtue, loving the people, and resting in the highest
+                  excellence."
+                </p>
+                <p class="philosophy-author">— 大學 (The Great Learning)</p>
               </div>
-              <p class="timeline-company">Veeva Systems · Toronto, CA</p>
-              <p class="timeline-date">May 2024 – Aug 2025</p>
-              <ul class="timeline-bullets">
-                <li>Developed automated testing frameworks (<strong>Python, JMeter, Shell</strong>), reducing
-                  performance analysis time</li>
-                <li>Diagnose performance bottlenecks to improve the reliability of the cloud applications</li>
-                <li>Collaborated with developers and QAs across teams in an <strong>Agile environment
-                    (Scrum/Kanban)</strong> to streamline Jenkins pipeline performance testing</li>
-              </ul>
             </div>
-          </div>
+          </section>
+        </div>
 
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <h3>Research Assistant</h3>
+        <!-- ===== Education ===== -->
+        <section class="resume-section fade-in">
+          <h2 class="section-title">
+            <svg
+              aria-hidden="true"
+              width="22"
+              height="22"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"
+              />
+            </svg>
+            Education
+          </h2>
+          <div class="edu-card">
+            <div class="edu-header">
+              <div>
+                <h3>University of Toronto</h3>
+                <p class="edu-subtitle">Toronto, Ontario, CA</p>
+                <p class="edu-degree">
+                  Bachelor of Applied Science in Computer Engineering (CE)
+                  Candidate
+                </p>
               </div>
-              <p class="timeline-company">Dynamic Optimization & Ops Mgmt Lab · Toronto, CA</p>
-              <p class="timeline-date">May 2023 – Aug 2023</p>
-              <ul class="timeline-bullets">
-                <li>Developed baseline ML models with <strong>Scikit-Learn</strong> to predict taxi-in/out times and
-                  runway assignments</li>
-                <li>Applied data preprocessing (<strong>NumPy, Seaborn</strong>) and exploratory analysis to improve
-                  prediction accuracy</li>
-                <li>Contributed to project progress through literature review, team collaboration, and problem-solving
-                </li>
-              </ul>
+              <div class="edu-meta edu-meta-horizontal">
+                <span class="edu-date">Sep 2021 – June 2026 (Expected)</span>
+                <span class="gpa-badge">GPA: 3.6 / 4.0</span>
+              </div>
+            </div>
+            <div class="edu-details">
+              <div class="awards-row">
+                <span class="award-chip">🤖 AI Engineering Minor</span>
+                <span class="award-chip"
+                  >🎓 Engineering Leadership Certificate</span
+                >
+              </div>
+              <div class="awards-row" style="margin-top: 0">
+                <span class="award-chip incoming-chip"
+                  >🎓 Incoming MEng Candidate (Fall 2026)</span
+                >
+              </div>
             </div>
           </div>
+        </section>
 
-        </div>
-      </section>
+        <!-- ===== Professional Experience ===== -->
+        <section class="resume-section fade-in">
+          <h2 class="section-title">
+            <svg
+              aria-hidden="true"
+              width="22"
+              height="22"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"
+              />
+            </svg>
+            Professional Experience
+          </h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>Intern Software Performance Engineer</h3>
+                </div>
+                <p class="timeline-company">Veeva Systems · Toronto, CA</p>
+                <p class="timeline-date">May 2024 – Aug 2025</p>
+                <ul class="timeline-bullets">
+                  <li>
+                    Developed automated testing frameworks (<strong
+                      >Python, JMeter, Shell</strong
+                    >), reducing performance analysis time
+                  </li>
+                  <li>
+                    Diagnose performance bottlenecks to improve the reliability
+                    of the cloud applications
+                  </li>
+                  <li>
+                    Collaborated with developers and QAs across teams in an
+                    <strong>Agile environment (Scrum/Kanban)</strong> to
+                    streamline Jenkins pipeline performance testing
+                  </li>
+                </ul>
+              </div>
+            </div>
 
-      <!-- ===== Selected Engineering Projects ===== -->
-      <section class="resume-section fade-in">
-        <h2 class="section-title">
-          <svg aria-hidden="true" width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>Research Assistant</h3>
+                </div>
+                <p class="timeline-company">
+                  Dynamic Optimization & Ops Mgmt Lab · Toronto, CA
+                </p>
+                <p class="timeline-date">May 2023 – Aug 2023</p>
+                <ul class="timeline-bullets">
+                  <li>
+                    Developed baseline ML models with
+                    <strong>Scikit-Learn</strong> to predict taxi-in/out times
+                    and runway assignments
+                  </li>
+                  <li>
+                    Applied data preprocessing (<strong>NumPy, Seaborn</strong>)
+                    and exploratory analysis to improve prediction accuracy
+                  </li>
+                  <li>
+                    Contributed to project progress through literature review,
+                    team collaboration, and problem-solving
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== Selected Engineering Projects ===== -->
+        <section class="resume-section fade-in">
+          <h2 class="section-title">
+            <svg
+              aria-hidden="true"
+              width="22"
+              height="22"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"
+              />
+            </svg>
+            Selected Engineering Projects
+          </h2>
+          <div class="project-grid">
+            <div class="project-card">
+              <div class="project-icon">🗣️</div>
+              <h3>VIVIDpdf — Text-to-Speech Web App</h3>
+              <span class="project-type">Capstone Project</span>
+              <p>
+                Developed an AI-driven TTS JavaScript web app for reading out
+                loud PDF documents. Features selective playback, local reading
+                history, custom pronunciation and skipping rules. Deployed on
+                Cloudflare.
+              </p>
+              <div class="tech-tags">
+                <span class="tech-tag js">JavaScript</span>
+                <span class="tech-tag data">AI/TTS</span>
+                <span class="tech-tag tool">Cloudflare</span>
+              </div>
+              <div class="project-meta-flex">
+                <span class="project-date m-0">Sep 2025 – Present</span>
+                <span class="timeline-badge incoming-badge badge-sm"
+                  >In Progress</span
+                >
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-icon">✨</div>
+              <h3>PixelNova — Productivity Management</h3>
+              <span class="project-type">Course Project</span>
+              <p>
+                Developed a Flask & PostgreSQL microservice using JWT for
+                session management and user authentication. Architected
+                inter-service communication via an API Gateway. Containerized
+                and deployed using Docker and Render.
+              </p>
+              <div class="tech-tags">
+                <span class="tech-tag python">Flask</span>
+                <span class="tech-tag data">PostgreSQL</span>
+                <span class="tech-tag tool">Docker</span>
+                <span class="tech-tag tool">JWT</span>
+                <span class="tech-tag tool">Render</span>
+              </div>
+              <span class="project-date">Sep – Dec 2025</span>
+            </div>
+
+            <div class="project-card">
+              <div class="project-icon">🔍</div>
+              <h3>Web Search Engine</h3>
+              <span class="project-type">Course Project</span>
+              <p>
+                Developing a Python-based search engine implementing a web
+                crawler, inverted index, and query processor. Designed document
+                and Word ID mappings. Configured and managed AWS EC2 instances
+                to host and test.
+              </p>
+              <div class="tech-tags">
+                <span class="tech-tag python">Python</span>
+                <span class="tech-tag data">AWS EC2</span>
+                <span class="tech-tag tool">Web Crawler</span>
+              </div>
+              <span class="project-date">Sep – Oct 2025</span>
+            </div>
+
+            <div class="project-card">
+              <div class="project-icon">🏎️</div>
+              <h3>Autonomous Route-Following Car</h3>
+              <span class="project-type">Hackathon Project</span>
+              <p>
+                Developed an autonomous robotic car using microcontroller
+                components, motor drivers, and sensor arrays. Implemented
+                control algorithms to detect course boundaries and navigate a
+                predefined route.
+              </p>
+              <div class="tech-tags">
+                <span class="tech-tag c-lang">C/C++</span>
+                <span class="tech-tag hw">Microcontrollers</span>
+                <span class="tech-tag hw">Sensors</span>
+              </div>
+              <span class="project-date">Dec 2023</span>
+            </div>
+
+            <div class="project-card">
+              <div class="project-icon">🎵</div>
+              <h3>Smart Distance-Based Music Player</h3>
+              <span class="project-type">Hackathon Project</span>
+              <p>
+                Built an Arduino UNO and electronics prototype to detect moving
+                objects and play context-specific music. C++-programmed
+                microcontroller logic for distance measurements and dynamic
+                sound output.
+              </p>
+              <div class="tech-tags">
+                <span class="tech-tag c-lang">C++</span>
+                <span class="tech-tag hw">Arduino UNO</span>
+                <span class="tech-tag hw">Electronics</span>
+              </div>
+              <span class="project-date">Feb 2023</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== Leadership & Community Involvement ===== -->
+        <section class="resume-section fade-in">
+          <h2 class="section-title">
+            <svg
+              aria-hidden="true"
+              width="22"
+              height="22"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"
+              />
+            </svg>
+            Leadership & Community
+          </h2>
+          <div class="project-grid">
+            <div class="project-card">
+              <div class="project-icon">🤝</div>
+              <h3>Professional Mentorship</h3>
+              <p>
+                Onboarded and mentored a new team member, facilitating their
+                transition into team workflows, daily operations, and
+                organizational culture.
+              </p>
+            </div>
+
+            <div class="project-card">
+              <div class="project-icon">📚</div>
+              <h3>Academic Collaboration</h3>
+              <p>
+                Spearheaded peer study groups and curated shared digital
+                resource repositories to enhance collaborative learning among
+                classmates.
+              </p>
+            </div>
+
+            <div class="project-card">
+              <div class="project-icon">📢</div>
+              <h3>Student Advocacy</h3>
+              <p>
+                Led a successful initiative to modernize the University of
+                Toronto's student identity verification process for new
+                admissions.
+              </p>
+            </div>
+
+            <div class="project-card">
+              <div class="project-icon">🌍</div>
+              <h3>International Student Support</h3>
+              <p>
+                Provided cultural and academic orientation for incoming
+                students, assisting with their transition to the Canadian
+                educational environment.
+              </p>
+            </div>
+
+            <div class="project-card">
+              <div class="project-icon">💛</div>
+              <h3>Community Youth Club (HK)</h3>
+              <p>
+                Participate in fundraising campaigns and community service
+                projects, including elder care visits and environmental
+                conservation efforts.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== Skills & Interests ===== -->
+        <section class="resume-section fade-in">
+          <h2 class="section-title">
+            <svg
+              aria-hidden="true"
+              width="22"
+              height="22"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"
+              />
+            </svg>
+            Skills & Interests
+          </h2>
+          <div class="skills-container">
+            <div class="skill-category">
+              <h3>Programming Languages</h3>
+              <div class="skill-tags">
+                <span class="skill-tag lang">Python</span>
+                <span class="skill-tag lang">C/C++</span>
+                <span class="skill-tag lang">Java</span>
+                <span class="skill-tag lang">JavaScript</span>
+                <span class="skill-tag lang">SQL</span>
+                <span class="skill-tag lang">Shell Scripting</span>
+                <span class="skill-tag lang">HTML</span>
+                <span class="skill-tag lang">CSS</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3>Frameworks & Tools</h3>
+              <div class="skill-tags">
+                <span class="skill-tag tool">Flask</span>
+                <span class="skill-tag tool">React</span>
+                <span class="skill-tag tool">JMeter</span>
+                <span class="skill-tag tool">Scikit-Learn</span>
+                <span class="skill-tag tool">NumPy</span>
+                <span class="skill-tag tool">Seaborn</span>
+                <span class="skill-tag tool">Jenkins</span>
+                <span class="skill-tag tool">Git</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3>Cloud & DevOps</h3>
+              <div class="skill-tags">
+                <span class="skill-tag data">AWS (EC2)</span>
+                <span class="skill-tag data">Docker</span>
+                <span class="skill-tag data">PostgreSQL</span>
+                <span class="skill-tag data">Render</span>
+                <span class="skill-tag data">CI/CD Pipeline</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3>Specializations</h3>
+              <div class="skill-tags">
+                <span class="skill-tag hw"
+                  >Software Performance Engineering</span
+                >
+                <span class="skill-tag hw">Microservices</span>
+                <span class="skill-tag hw">AI / Machine Learning</span>
+                <span class="skill-tag hw">Embedded Systems</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3>Spoken Languages</h3>
+              <div class="skill-tags">
+                <span class="skill-tag lang">English</span>
+                <span class="skill-tag lang">Chinese</span>
+                <span class="skill-tag lang">Japanese (Beginner)</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <a
+          href="https://github.com/TszTungChau-Jo"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="View on GitHub"
+          class="github-btn"
+        >
+          <svg
+            aria-hidden="true"
+            width="24"
+            height="24"
+            fill="currentColor"
+            style="width: 24px; height: 24px"
+          >
+            <use href="/pics/icons.svg#github"></use>
           </svg>
-          Selected Engineering Projects
-        </h2>
-        <div class="project-grid">
-
-          <div class="project-card">
-            <div class="project-icon">🗣️</div>
-            <h3>VIVIDpdf — Text-to-Speech Web App</h3>
-            <span class="project-type">Capstone Project</span>
-            <p>Developed an AI-driven TTS JavaScript web app for reading out loud PDF documents. Features selective
-              playback, local reading history, custom pronunciation and skipping rules. Deployed on Cloudflare.</p>
-            <div class="tech-tags">
-              <span class="tech-tag js">JavaScript</span>
-              <span class="tech-tag data">AI/TTS</span>
-              <span class="tech-tag tool">Cloudflare</span>
-            </div>
-            <div class="project-meta-flex">
-              <span class="project-date m-0">Sep 2025 – Present</span>
-              <span class="timeline-badge incoming-badge badge-sm">In Progress</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-icon">✨</div>
-            <h3>PixelNova — Productivity Management</h3>
-            <span class="project-type">Course Project</span>
-            <p>Developed a Flask & PostgreSQL microservice using JWT for session management and user authentication.
-              Architected inter-service communication via an API Gateway. Containerized and deployed using Docker and
-              Render.</p>
-            <div class="tech-tags">
-              <span class="tech-tag python">Flask</span>
-              <span class="tech-tag data">PostgreSQL</span>
-              <span class="tech-tag tool">Docker</span>
-              <span class="tech-tag tool">JWT</span>
-              <span class="tech-tag tool">Render</span>
-            </div>
-            <span class="project-date">Sep – Dec 2025</span>
-          </div>
-
-          <div class="project-card">
-            <div class="project-icon">🔍</div>
-            <h3>Web Search Engine</h3>
-            <span class="project-type">Course Project</span>
-            <p>Developing a Python-based search engine implementing a web crawler, inverted index, and query processor.
-              Designed document and Word ID mappings. Configured and managed AWS EC2 instances to host and test.</p>
-            <div class="tech-tags">
-              <span class="tech-tag python">Python</span>
-              <span class="tech-tag data">AWS EC2</span>
-              <span class="tech-tag tool">Web Crawler</span>
-            </div>
-            <span class="project-date">Sep – Oct 2025</span>
-          </div>
-
-          <div class="project-card">
-            <div class="project-icon">🏎️</div>
-            <h3>Autonomous Route-Following Car</h3>
-            <span class="project-type">Hackathon Project</span>
-            <p>Developed an autonomous robotic car using microcontroller components, motor drivers, and sensor arrays.
-              Implemented control algorithms to detect course boundaries and navigate a predefined route.</p>
-            <div class="tech-tags">
-              <span class="tech-tag c-lang">C/C++</span>
-              <span class="tech-tag hw">Microcontrollers</span>
-              <span class="tech-tag hw">Sensors</span>
-            </div>
-            <span class="project-date">Dec 2023</span>
-          </div>
-
-          <div class="project-card">
-            <div class="project-icon">🎵</div>
-            <h3>Smart Distance-Based Music Player</h3>
-            <span class="project-type">Hackathon Project</span>
-            <p>Built an Arduino UNO and electronics prototype to detect moving objects and play context-specific music.
-              C++-programmed microcontroller logic for distance measurements and dynamic sound output.</p>
-            <div class="tech-tags">
-              <span class="tech-tag c-lang">C++</span>
-              <span class="tech-tag hw">Arduino UNO</span>
-              <span class="tech-tag hw">Electronics</span>
-            </div>
-            <span class="project-date">Feb 2023</span>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- ===== Leadership & Community Involvement ===== -->
-      <section class="resume-section fade-in">
-        <h2 class="section-title">
-          <svg aria-hidden="true" width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/tsz-tung-chau/"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="View on LinkedIn"
+          class="linkedin-btn"
+        >
+          <svg
+            aria-hidden="true"
+            width="24"
+            height="24"
+            fill="currentColor"
+            style="width: 24px; height: 24px"
+          >
+            <use href="/pics/icons.svg#linkedin"></use>
           </svg>
-          Leadership & Community
-        </h2>
-        <div class="project-grid">
+        </a>
+      </footer>
+    </div>
 
-          <div class="project-card">
-            <div class="project-icon">🤝</div>
-            <h3>Professional Mentorship</h3>
-            <p>Onboarded and mentored a new team member, facilitating their transition into team workflows, daily
-              operations, and organizational culture.</p>
-          </div>
-
-          <div class="project-card">
-            <div class="project-icon">📚</div>
-            <h3>Academic Collaboration</h3>
-            <p>Spearheaded peer study groups and curated shared digital resource repositories to enhance collaborative
-              learning among classmates.</p>
-          </div>
-
-          <div class="project-card">
-            <div class="project-icon">📢</div>
-            <h3>Student Advocacy</h3>
-            <p>Led a successful initiative to modernize the University of Toronto's student identity verification
-              process for new admissions.</p>
-          </div>
-
-          <div class="project-card">
-            <div class="project-icon">🌍</div>
-            <h3>International Student Support</h3>
-            <p>Provided cultural and academic orientation for incoming students, assisting with their transition to the
-              Canadian educational environment.</p>
-          </div>
-
-          <div class="project-card">
-            <div class="project-icon">💛</div>
-            <h3>Community Youth Club (HK)</h3>
-            <p>Participate in fundraising campaigns and community service projects, including elder care visits and
-              environmental conservation efforts.</p>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- ===== Skills & Interests ===== -->
-      <section class="resume-section fade-in">
-        <h2 class="section-title">
-          <svg aria-hidden="true" width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z" />
-          </svg>
-          Skills & Interests
-        </h2>
-        <div class="skills-container">
-
-          <div class="skill-category">
-            <h3>Programming Languages</h3>
-            <div class="skill-tags">
-              <span class="skill-tag lang">Python</span>
-              <span class="skill-tag lang">C/C++</span>
-              <span class="skill-tag lang">Java</span>
-              <span class="skill-tag lang">JavaScript</span>
-              <span class="skill-tag lang">SQL</span>
-              <span class="skill-tag lang">Shell Scripting</span>
-              <span class="skill-tag lang">HTML</span>
-              <span class="skill-tag lang">CSS</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h3>Frameworks & Tools</h3>
-            <div class="skill-tags">
-              <span class="skill-tag tool">Flask</span>
-              <span class="skill-tag tool">React</span>
-              <span class="skill-tag tool">JMeter</span>
-              <span class="skill-tag tool">Scikit-Learn</span>
-              <span class="skill-tag tool">NumPy</span>
-              <span class="skill-tag tool">Seaborn</span>
-              <span class="skill-tag tool">Jenkins</span>
-              <span class="skill-tag tool">Git</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h3>Cloud & DevOps</h3>
-            <div class="skill-tags">
-              <span class="skill-tag data">AWS (EC2)</span>
-              <span class="skill-tag data">Docker</span>
-              <span class="skill-tag data">PostgreSQL</span>
-              <span class="skill-tag data">Render</span>
-              <span class="skill-tag data">CI/CD Pipeline</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h3>Specializations</h3>
-            <div class="skill-tags">
-              <span class="skill-tag hw">Software Performance Engineering</span>
-              <span class="skill-tag hw">Microservices</span>
-              <span class="skill-tag hw">AI / Machine Learning</span>
-              <span class="skill-tag hw">Embedded Systems</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h3>Spoken Languages</h3>
-            <div class="skill-tags">
-              <span class="skill-tag lang">English</span>
-              <span class="skill-tag lang">Chinese</span>
-              <span class="skill-tag lang">Japanese (Beginner)</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-    </main>
-
-    <footer>
-      <a href="https://github.com/TszTungChau-Jo" target="_blank" rel="noopener noreferrer" title="View on GitHub"
-        class="github-btn">
-        <svg aria-hidden="true" width="24" height="24" fill="currentColor" style="width: 24px; height: 24px;">
-          <use href="/pics/icons.svg#github"></use>
-        </svg>
-      </a>
-      <a href="https://www.linkedin.com/in/tsz-tung-chau/" target="_blank" rel="noopener noreferrer"
-        title="View on LinkedIn" class="linkedin-btn">
-        <svg aria-hidden="true" width="24" height="24" fill="currentColor" style="width: 24px; height: 24px;">
-          <use href="/pics/icons.svg#linkedin"></use>
-        </svg>
-      </a>
-    </footer>
-  </div>
-
-  <!-- Download Resume FAB -->
-  <a href="/docs/JoshuaTTC_resume.pdf" target="_blank" class="download-fab" title="View Resume PDF"
-    aria-label="View Resume PDF">
-    <svg aria-hidden="true" width="24" height="24" fill="currentColor" style="width: 24px; height: 24px;">
-      <use href="/pics/icons.svg#download"></use>
-    </svg>
-  </a>
-
-</body>
-
+    <!-- Download Resume FAB -->
+    <a
+      href="/docs/JoshuaTTC_resume.pdf"
+      target="_blank"
+      class="download-fab"
+      title="View Resume PDF"
+      aria-label="View Resume PDF"
+    >
+      <svg
+        aria-hidden="true"
+        width="24"
+        height="24"
+        fill="currentColor"
+        style="width: 24px; height: 24px"
+      >
+        <use href="/pics/icons.svg#download"></use>
+      </svg>
+    </a>
+  </body>
 </html>

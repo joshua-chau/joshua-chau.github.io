@@ -1,113 +1,161 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journal | Joshua Chau</title>
+    <link rel="icon" href="/pics/web-logo.png" type="image/png" />
+    <meta
+      name="description"
+      content="Journal of Joshua Chau — Reflections, thoughts, and short learning notes."
+    />
+    <meta property="og:title" content="Journal | Joshua Chau" />
+    <meta
+      property="og:description"
+      content="Journal of Joshua Chau — Reflections, thoughts, and short learning notes."
+    />
+    <meta
+      property="og:image"
+      content="https://tsztungchau-jo.github.io/pics/web-logo.png"
+    />
+    <meta
+      property="og:url"
+      content="https://tsztungchau-jo.github.io/journal.html"
+    />
+    <meta property="og:type" content="website" />
+    <script>
+      // Apply saved theme immediately to prevent flash of wrong theme
+      (function () {
+        var theme =
+          localStorage.getItem("theme") ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <script type="module" src="/src/js/main.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Journal | Joshua Chau</title>
-  <link rel="icon" href="/pics/web-logo.png" type="image/png" />
-  <meta name="description" content="Journal of Joshua Chau — Reflections, thoughts, and short learning notes." />
-  <meta property="og:title" content="Journal | Joshua Chau" />
-  <meta property="og:description" content="Journal of Joshua Chau — Reflections, thoughts, and short learning notes." />
-  <meta property="og:image" content="https://tsztungchau-jo.github.io/pics/web-logo.png" />
-  <meta property="og:url" content="https://tsztungchau-jo.github.io/journal.html" />
-  <meta property="og:type" content="website" />
-  <script>
-    // Apply saved theme immediately to prevent flash of wrong theme
-    (function () {
-      var theme = localStorage.getItem('theme')
-        || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-  </script>
-  <link rel="stylesheet" href="/src/css/style.css" />
-  <script type="module" src="/src/js/main.js"></script>
-</head>
+  <body>
+    <!-- Sidebar Toggle Button -->
+    <button
+      id="sidebarToggle"
+      class="sidebar-toggle"
+      aria-label="Close sidebar"
+      title="Close sidebar"
+    >
+      ☰
+    </button>
+    <!-- Mobile Backdrop -->
+    <div id="sidebarBackdrop" class="backdrop"></div>
 
-<body>
-  <!-- Sidebar Toggle Button -->
-  <button id="sidebarToggle" class="sidebar-toggle" aria-label="Close sidebar" title="Close sidebar">☰</button>
-  <!-- Mobile Backdrop -->
-  <div id="sidebarBackdrop" class="backdrop"></div>
+    <header class="sidebar">
+      <!-- Theme Toggle Button (inside sidebar) -->
+      <button
+        id="themeToggle"
+        class="theme-toggle"
+        aria-label="Toggle theme"
+        title="Toggle theme"
+      ></button>
+      <h2>Joshua Chau</h2>
+      <nav>
+        <a href="index.html">About</a>
+        <a href="journal.html" class="active">Journal</a>
+        <a href="professions.html">Professions</a>
+        <a href="journey.html">Journey</a>
+      </nav>
+      <div class="sidebar-section-title">Journal Titles</div>
+      <ul id="titleList" class="title-list"></ul>
+    </header>
 
-  <header class="sidebar">
-    <!-- Theme Toggle Button (inside sidebar) -->
-    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme"></button>
-    <h2>Joshua Chau</h2>
-    <nav>
-      <a href="index.html">About</a>
-      <a href="journal.html" class="active">Journal</a>
-      <a href="professions.html">Professions</a>
-      <a href="journey.html">Journey</a>
-    </nav>
-    <div class="sidebar-section-title">Journal Titles</div>
-    <ul id="titleList" class="title-list"></ul>
-  </header>
-
-  <div class="content-wrapper">
-    <main>
-      <section>
-        <h1>Journal</h1>
-        <p class="note">This is where I’ll write reflections, thoughts, and short learning notes.</p>
-
-        <article class="entry">
-          <h2>October 25, 2025 — Starting My Personal Webpage</h2>
-          <p>
-            感恩生命中的每一個經歷。
-            虽说我至今仍有许多不解之处，但我会尽量珍惜当下，感激身边的人和事。
-          </p>
-          <p>
-            Today, I started building my own personal website.
-            It’s simple, but it feels great to finally have a space
-            where I can express myself and share what I’ve been learning.
-            The plan is to keep it minimal and reflective.
-          </p>
-        </article>
-
-        <article class="entry">
-          <h2>October 26, 2025 — The second day of the reading week </h2>
-          <p>
-            人生最美好的事情，莫过于体验所经历的一切。
-            无论是喜悦或是痛苦，都是成长的一部分。
-          </p>
-          <p>
-            Although it's a Sunday, it was another day with a lot of meetings.
-            One was chilling, one was productive, and one was pressured.
-            I was thankful that sometimes I don't have to lead everything.
-            I can just be a participant and learn from others.
-          </p>
-        </article>
-
-        <article class="entry">
-          <h2>February 16, 2026 — 除夕 </h2>
-          <p>
-            在这无尽的宇宙中，爱使我们终将相遇。
-            相遇、相知、相伴，这、是多么幸运的事情。
-            感谢每一个在我生命中出现的人，无论是短暂的还是长久的，他们都让我成为了现在的我。
+    <div class="content-wrapper">
+      <main>
+        <section>
+          <h1>Journal</h1>
+          <p class="note">
+            This is where I’ll write reflections, thoughts, and short learning
+            notes.
           </p>
 
-        </article>
+          <article class="entry">
+            <h2>October 25, 2025 — Starting My Personal Webpage</h2>
+            <p>
+              感恩生命中的每一個經歷。
+              虽说我至今仍有许多不解之处，但我会尽量珍惜当下，感激身边的人和事。
+            </p>
+            <p>
+              Today, I started building my own personal website. It’s simple,
+              but it feels great to finally have a space where I can express
+              myself and share what I’ve been learning. The plan is to keep it
+              minimal and reflective.
+            </p>
+          </article>
 
-        <!-- Add more <article> entries here later -->
-      </section>
-    </main>
+          <article class="entry">
+            <h2>October 26, 2025 — The second day of the reading week</h2>
+            <p>
+              人生最美好的事情，莫过于体验所经历的一切。
+              无论是喜悦或是痛苦，都是成长的一部分。
+            </p>
+            <p>
+              Although it's a Sunday, it was another day with a lot of meetings.
+              One was chilling, one was productive, and one was pressured. I was
+              thankful that sometimes I don't have to lead everything. I can
+              just be a participant and learn from others.
+            </p>
+          </article>
 
-    <footer>
-      <a href="https://github.com/TszTungChau-Jo" target="_blank" rel="noopener noreferrer" title="View on GitHub"
-        class="github-btn">
-        <svg aria-hidden="true" width="24" height="24" fill="currentColor" style="width: 24px; height: 24px;">
-          <use href="/pics/icons.svg#github"></use>
-        </svg>
-      </a>
-      <a href="https://www.linkedin.com/in/tsz-tung-chau/" target="_blank" rel="noopener noreferrer"
-        title="View on LinkedIn" class="linkedin-btn">
-        <svg aria-hidden="true" width="24" height="24" fill="currentColor" style="width: 24px; height: 24px;">
-          <use href="/pics/icons.svg#linkedin"></use>
-        </svg>
-      </a>
-    </footer>
-  </div>
+          <article class="entry">
+            <h2>February 16, 2026 — 除夕</h2>
+            <p>
+              在这无尽的宇宙中，爱使我们终将相遇。
+              相遇、相知、相伴，这、是多么幸运的事情。
+              感谢每一个在我生命中出现的人，无论是短暂的还是长久的，他们都让我成为了现在的我。
+            </p>
+          </article>
 
-</body>
+          <!-- Add more <article> entries here later -->
+        </section>
+      </main>
 
+      <footer>
+        <a
+          href="https://github.com/TszTungChau-Jo"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="View on GitHub"
+          class="github-btn"
+        >
+          <svg
+            aria-hidden="true"
+            width="24"
+            height="24"
+            fill="currentColor"
+            style="width: 24px; height: 24px"
+          >
+            <use href="/pics/icons.svg#github"></use>
+          </svg>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/tsz-tung-chau/"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="View on LinkedIn"
+          class="linkedin-btn"
+        >
+          <svg
+            aria-hidden="true"
+            width="24"
+            height="24"
+            fill="currentColor"
+            style="width: 24px; height: 24px"
+          >
+            <use href="/pics/icons.svg#linkedin"></use>
+          </svg>
+        </a>
+      </footer>
+    </div>
+  </body>
 </html>

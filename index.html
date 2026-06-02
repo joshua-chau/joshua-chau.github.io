@@ -1,161 +1,210 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Joshua Chau</title>
+    <link rel="icon" href="/pics/web-logo.png" type="image/png" />
+    <meta
+      name="description"
+      content="Personal webpage of Joshua Chau — Computer Engineering student at the University of Toronto."
+    />
+    <meta property="og:title" content="About | Joshua Chau" />
+    <meta
+      property="og:description"
+      content="Personal webpage of Joshua Chau — Computer Engineering student at the University of Toronto."
+    />
+    <meta
+      property="og:image"
+      content="https://tsztungchau-jo.github.io/pics/web-logo.png"
+    />
+    <meta property="og:url" content="https://tsztungchau-jo.github.io/" />
+    <meta property="og:type" content="website" />
+    <script>
+      // Apply saved theme immediately to prevent flash of wrong theme
+      (function () {
+        var theme =
+          localStorage.getItem("theme") ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <script type="module" src="/src/js/main.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Joshua Chau</title>
-  <link rel="icon" href="/pics/web-logo.png" type="image/png" />
-  <meta name="description"
-    content="Personal webpage of Joshua Chau — Computer Engineering student at the University of Toronto." />
-  <meta property="og:title" content="About | Joshua Chau" />
-  <meta property="og:description" content="Personal webpage of Joshua Chau — Computer Engineering student at the University of Toronto." />
-  <meta property="og:image" content="https://tsztungchau-jo.github.io/pics/web-logo.png" />
-  <meta property="og:url" content="https://tsztungchau-jo.github.io/" />
-  <meta property="og:type" content="website" />
-  <script>
-    // Apply saved theme immediately to prevent flash of wrong theme
-    (function () {
-      var theme = localStorage.getItem('theme')
-        || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-  </script>
-  <link rel="stylesheet" href="/src/css/style.css" />
-  <script type="module" src="/src/js/main.js"></script>
-</head>
+  <body>
+    <!-- Sidebar Toggle Button -->
+    <button
+      id="sidebarToggle"
+      class="sidebar-toggle"
+      aria-label="Close sidebar"
+      title="Close sidebar"
+    >
+      ☰
+    </button>
+    <!-- Mobile Backdrop -->
+    <div id="sidebarBackdrop" class="backdrop"></div>
 
-<body>
-  <!-- Sidebar Toggle Button -->
-  <button id="sidebarToggle" class="sidebar-toggle" aria-label="Close sidebar" title="Close sidebar">☰</button>
-  <!-- Mobile Backdrop -->
-  <div id="sidebarBackdrop" class="backdrop"></div>
+    <header class="sidebar">
+      <!-- Theme Toggle Button (inside sidebar) -->
+      <button
+        id="themeToggle"
+        class="theme-toggle"
+        aria-label="Toggle theme"
+        title="Toggle theme"
+      ></button>
+      <h2>Joshua Chau</h2>
+      <nav>
+        <a href="index.html" class="active">About</a>
+        <a href="journal.html">Journal</a>
+        <a href="professions.html">Professions</a>
+        <a href="journey.html">Journey</a>
+      </nav>
+    </header>
 
-  <header class="sidebar">
-    <!-- Theme Toggle Button (inside sidebar) -->
-    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme"></button>
-    <h2>Joshua Chau</h2>
-    <nav>
-      <a href="index.html" class="active">About</a>
-      <a href="journal.html">Journal</a>
-      <a href="professions.html">Professions</a>
-      <a href="journey.html">Journey</a>
-    </nav>
-  </header>
-
-  <div class="content-wrapper">
-
-    <main>
-      <div class="profile-card fade-in">
-        <div class="profile-banner">
-          <img src="/pics/starry_banner.png" alt="Profile Banner" />
-        </div>
-        <div class="profile-info">
-          <div class="profile-details">
-            <div class="profile-name-row">
-              <h1 class="profile-name">Tsz Tung (Joshua) Chau</h1>
-              <span class="pronouns">He/Him</span>
-            </div>
-            <p class="profile-headline">A human being who is living on Earth.</p>
-            <p class="profile-location">
-              Toronto, Ontario, Canada
-            </p>
+    <div class="content-wrapper">
+      <main>
+        <div class="profile-card fade-in">
+          <div class="profile-banner">
+            <img src="/pics/starry_banner.png" alt="Profile Banner" />
           </div>
-          <div class="profile-avatar-container">
-            <img src="/pics/linkedin-profile-pic.jpg" alt="Joshua Chau" class="profile-avatar" />
-          </div>
-        </div>
-      </div>
-
-      <section class="intro fade-in">
-        <h2>About Me</h2>
-        <p>
-          Hi, I’m Joshua Chau 👋 I'm a Computer Engineering student at the University of Toronto.
-          I’m curious about how technology shapes our world.
-        </p>
-      </section>
-
-      <section class="life-stages fade-in">
-        <h2>My Journey</h2>
-        <div class="ht-wrapper">
-          <div class="ht-container">
-            <div class="ht-axis"></div>
-
-            <div class="ht-item up">
-              <div class="ht-connector"></div>
-              <div class="ht-node c1" title="Hello World">👶</div>
-              <div class="ht-content">
-                <div class="ht-year">2002</div>
-                <div class="ht-desc">Hello World! The journey begins.</div>
+          <div class="profile-info">
+            <div class="profile-details">
+              <div class="profile-name-row">
+                <h1 class="profile-name">Tsz Tung (Joshua) Chau</h1>
+                <span class="pronouns">He/Him</span>
               </div>
+              <p class="profile-headline">
+                A human being who is living on Earth.
+              </p>
+              <p class="profile-location">Toronto, Ontario, Canada</p>
             </div>
-
-            <div class="ht-item down">
-              <div class="ht-connector"></div>
-              <div class="ht-node c2" title="Discovery">🎒</div>
-              <div class="ht-content">
-                <div class="ht-year">2018</div>
-                <div class="ht-desc">Discovered a passion for technology.</div>
-              </div>
-            </div>
-
-            <div class="ht-item up">
-              <div class="ht-connector"></div>
-              <div class="ht-node c3" title="University">🎓</div>
-              <div class="ht-content">
-                <div class="ht-year">2021</div>
-                <div class="ht-desc">Began Engineering at U of T.</div>
-              </div>
-            </div>
-
-            <div class="ht-item down">
-              <div class="ht-connector"></div>
-              <div class="ht-node c4" title="Creation">🛠️</div>
-              <div class="ht-content">
-                <div class="ht-year">2022</div>
-                <div class="ht-desc">Started building software projects.</div>
-              </div>
-            </div>
-
-            <div class="ht-item up">
-              <div class="ht-connector"></div>
-              <div class="ht-node c5" title="Industry">💼</div>
-              <div class="ht-content">
-                <div class="ht-year">2023</div>
-                <div class="ht-desc">Entered the professional tech world.</div>
-              </div>
-            </div>
-
-            <div class="ht-item down">
-              <div class="ht-connector"></div>
-              <div class="ht-node c6" title="Present">🚀</div>
-              <div class="ht-content">
-                <div class="ht-year">Present</div>
-                <div class="ht-desc">Learning and building the future.</div>
-              </div>
+            <div class="profile-avatar-container">
+              <img
+                src="/pics/linkedin-profile-pic.jpg"
+                alt="Joshua Chau"
+                class="profile-avatar"
+              />
             </div>
           </div>
         </div>
-      </section>
-    </main>
 
-    <footer>
-      <a href="https://github.com/TszTungChau-Jo" target="_blank" rel="noopener noreferrer" title="View on GitHub"
-        class="github-btn">
-        <svg aria-hidden="true" width="24" height="24" fill="currentColor" style="width: 24px; height: 24px;">
-          <use href="/pics/icons.svg#github"></use>
-        </svg>
-      </a>
-      <a href="https://www.linkedin.com/in/tsz-tung-chau/" target="_blank" rel="noopener noreferrer"
-        title="View on LinkedIn" class="linkedin-btn">
-        <svg aria-hidden="true" width="24" height="24" fill="currentColor" style="width: 24px; height: 24px;">
-          <use href="/pics/icons.svg#linkedin"></use>
-        </svg>
-      </a>
-    </footer>
+        <section class="intro fade-in">
+          <h2>About Me</h2>
+          <p>
+            Hi, I’m Joshua Chau 👋 I'm a Computer Engineering student at the
+            University of Toronto. I’m curious about how technology shapes our
+            world.
+          </p>
+        </section>
 
-  </div>
+        <section class="life-stages fade-in">
+          <h2>My Journey</h2>
+          <div class="ht-wrapper">
+            <div class="ht-container">
+              <div class="ht-axis"></div>
 
-</body>
+              <div class="ht-item up">
+                <div class="ht-connector"></div>
+                <div class="ht-node c1" title="Hello World">👶</div>
+                <div class="ht-content">
+                  <div class="ht-year">2002</div>
+                  <div class="ht-desc">Hello World! The journey begins.</div>
+                </div>
+              </div>
 
+              <div class="ht-item down">
+                <div class="ht-connector"></div>
+                <div class="ht-node c2" title="Discovery">🎒</div>
+                <div class="ht-content">
+                  <div class="ht-year">2018</div>
+                  <div class="ht-desc">
+                    Discovered a passion for technology.
+                  </div>
+                </div>
+              </div>
+
+              <div class="ht-item up">
+                <div class="ht-connector"></div>
+                <div class="ht-node c3" title="University">🎓</div>
+                <div class="ht-content">
+                  <div class="ht-year">2021</div>
+                  <div class="ht-desc">Began Engineering at U of T.</div>
+                </div>
+              </div>
+
+              <div class="ht-item down">
+                <div class="ht-connector"></div>
+                <div class="ht-node c4" title="Creation">🛠️</div>
+                <div class="ht-content">
+                  <div class="ht-year">2022</div>
+                  <div class="ht-desc">Started building software projects.</div>
+                </div>
+              </div>
+
+              <div class="ht-item up">
+                <div class="ht-connector"></div>
+                <div class="ht-node c5" title="Industry">💼</div>
+                <div class="ht-content">
+                  <div class="ht-year">2023</div>
+                  <div class="ht-desc">
+                    Entered the professional tech world.
+                  </div>
+                </div>
+              </div>
+
+              <div class="ht-item down">
+                <div class="ht-connector"></div>
+                <div class="ht-node c6" title="Present">🚀</div>
+                <div class="ht-content">
+                  <div class="ht-year">Present</div>
+                  <div class="ht-desc">Learning and building the future.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <a
+          href="https://github.com/TszTungChau-Jo"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="View on GitHub"
+          class="github-btn"
+        >
+          <svg
+            aria-hidden="true"
+            width="24"
+            height="24"
+            fill="currentColor"
+            style="width: 24px; height: 24px"
+          >
+            <use href="/pics/icons.svg#github"></use>
+          </svg>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/tsz-tung-chau/"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="View on LinkedIn"
+          class="linkedin-btn"
+        >
+          <svg
+            aria-hidden="true"
+            width="24"
+            height="24"
+            fill="currentColor"
+            style="width: 24px; height: 24px"
+          >
+            <use href="/pics/icons.svg#linkedin"></use>
+          </svg>
+        </a>
+      </footer>
+    </div>
+  </body>
 </html>

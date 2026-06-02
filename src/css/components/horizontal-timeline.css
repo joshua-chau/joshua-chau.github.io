@@ -68,7 +68,9 @@
   width: 160px;
   text-align: center;
   opacity: 0.85;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .ht-item:hover .ht-content {
@@ -140,7 +142,9 @@
 }
 
 .ht-node.c1:hover {
-  box-shadow: 0 0 0 6px var(--card-bg), 0 0 15px #e11d48;
+  box-shadow:
+    0 0 0 6px var(--card-bg),
+    0 0 15px #e11d48;
 }
 
 .ht-node.c2 {
@@ -148,7 +152,9 @@
 }
 
 .ht-node.c2:hover {
-  box-shadow: 0 0 0 6px var(--card-bg), 0 0 15px #d946ef;
+  box-shadow:
+    0 0 0 6px var(--card-bg),
+    0 0 15px #d946ef;
 }
 
 .ht-node.c3 {
@@ -156,7 +162,9 @@
 }
 
 .ht-node.c3:hover {
-  box-shadow: 0 0 0 6px var(--card-bg), 0 0 15px #8b5cf6;
+  box-shadow:
+    0 0 0 6px var(--card-bg),
+    0 0 15px #8b5cf6;
 }
 
 .ht-node.c4 {
@@ -164,7 +172,9 @@
 }
 
 .ht-node.c4:hover {
-  box-shadow: 0 0 0 6px var(--card-bg), 0 0 15px #3b82f6;
+  box-shadow:
+    0 0 0 6px var(--card-bg),
+    0 0 15px #3b82f6;
 }
 
 .ht-node.c5 {
@@ -172,7 +182,9 @@
 }
 
 .ht-node.c5:hover {
-  box-shadow: 0 0 0 6px var(--card-bg), 0 0 15px #0ea5e9;
+  box-shadow:
+    0 0 0 6px var(--card-bg),
+    0 0 15px #0ea5e9;
 }
 
 .ht-node.c6 {
@@ -180,7 +192,9 @@
 }
 
 .ht-node.c6:hover {
-  box-shadow: 0 0 0 5px var(--card-bg), 0 0 15px #10b981;
+  box-shadow:
+    0 0 0 5px var(--card-bg),
+    0 0 15px #10b981;
 }
 
 /* Responsive Mobile Timeline */

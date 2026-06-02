@@ -4,7 +4,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .github-btn:hover {
@@ -18,7 +20,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .linkedin-btn:hover {
@@ -62,4 +66,3 @@
 .download-fab:active {
   transform: scale(0.95);
 }
-

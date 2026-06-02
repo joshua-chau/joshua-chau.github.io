@@ -98,8 +98,6 @@
   margin: 0.25rem 0 0;
 }
 
-
-
 @media (min-width: 769px) {
   .content-wrapper {
     margin-left: 260px;
@@ -135,4 +133,3 @@ h2 {
   margin-bottom: 1rem;
   transition: color 0.35s ease;
 }
-
