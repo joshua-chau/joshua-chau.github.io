@@ -85,6 +85,27 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     
     marker.bindPopup(popupContent);
+
+    // Handle marker click to show photos section for visited locations
+    marker.on('click', () => {
+      const photosSection = document.getElementById('photos-section');
+      const photosTitle = document.getElementById('photos-title');
+      
+      if (loc.type === 'visited') {
+        if (photosSection && photosTitle) {
+          photosTitle.textContent = `Photos from ${loc.name}`;
+          photosSection.classList.remove('hidden');
+          // Smooth scroll to the photos section
+          setTimeout(() => {
+            photosSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }, 100);
+        }
+      } else {
+        if (photosSection) {
+          photosSection.classList.add('hidden');
+        }
+      }
+    });
   });
 
   // Handle map resize when sidebar toggles

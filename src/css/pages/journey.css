@@ -93,3 +93,43 @@
   font-size: 0.85rem !important;
   color: var(--text-muted) !important;
 }
+
+/* Photos Section Styles */
+.photos-section {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px var(--card-shadow), 0 2px 4px -1px var(--card-shadow);
+  border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
+  margin-bottom: 2rem;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.photos-section.hidden {
+  display: none;
+}
+
+.photos-section h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--heading);
+  font-size: 1.25rem;
+}
+
+.photos-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px;
+  background: var(--bg-color);
+  border-radius: 8px;
+  border: 1px dashed var(--card-border, rgba(0, 0, 0, 0.2));
+}
+
+.placeholder-text {
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: center;
+  padding: 1rem;
+}
