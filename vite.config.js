@@ -7,7 +7,8 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         journal: resolve(__dirname, 'journal.html'),
-        professions: resolve(__dirname, 'professions.html')
+        professions: resolve(__dirname, 'professions.html'),
+        journey: resolve(__dirname, 'journey.html')
       }
     }
   }
