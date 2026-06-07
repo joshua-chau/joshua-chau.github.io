@@ -1,5 +1,5 @@
-# TszTungChau-Jo.github.io
+# joshua-chau.github.io
 
 Serves as Joshua's personal webpage
 
-Website: https://tsztungchau-jo.github.io/
+Website: <a href="https://joshua-chau.github.io/" target="_blank">https://joshua-chau.github.io/</a>

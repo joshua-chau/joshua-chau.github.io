@@ -1,5 +1,5 @@
 {
-  "name": "tsztungchau-jo.github.io",
+  "name": "joshua-chau.github.io",
   "version": "1.0.0",
   "description": "Serves as Joshua's personal webpage",
   "main": "index.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TszTungChau-Jo/TszTungChau-Jo.github.io.git"
+    "url": "git+https://github.com/joshua-chau/joshua-chau.github.io.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TszTungChau-Jo/TszTungChau-Jo.github.io/issues"
+    "url": "https://github.com/joshua-chau/joshua-chau.github.io/issues"
   },
-  "homepage": "https://github.com/TszTungChau-Jo/TszTungChau-Jo.github.io#readme",
+  "homepage": "https://github.com/joshua-chau/joshua-chau.github.io#readme",
   "devDependencies": {
     "vite": "^8.0.14"
   }
