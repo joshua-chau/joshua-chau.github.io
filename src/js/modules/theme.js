@@ -19,6 +19,12 @@ export function initTheme() {
         "aria-label",
         theme === "dark" ? "Switch to light mode" : "Switch to dark mode",
       );
+      // Update the icon and label text
+      const iconEl = themeToggle.querySelector(".nav-icon");
+      const labelEl = themeToggle.querySelector(".nav-label");
+      if (iconEl) iconEl.textContent = theme === "dark" ? "☀️" : "🌙";
+      if (labelEl)
+        labelEl.textContent = theme === "dark" ? "Light mode" : "Dark mode";
     }
   }
 

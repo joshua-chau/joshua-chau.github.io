@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="view-transition" content="same-origin" />
     <title>Journal | Joshua Chau</title>
     <link rel="icon" href="/pics/web-logo.png" type="image/png" />
     <meta
@@ -18,10 +19,7 @@
       property="og:image"
       content="https://joshua-chau.github.io/pics/web-logo.png"
     />
-    <meta
-      property="og:url"
-      content="https://joshua-chau.github.io/journal"
-    />
+    <meta property="og:url" content="https://joshua-chau.github.io/journal" />
     <meta property="og:type" content="website" />
     <script>
       // Apply saved theme immediately to prevent flash of wrong theme
@@ -39,45 +37,110 @@
   </head>
 
   <body>
-    <!-- Sidebar Toggle Button -->
+    <!-- Sidebar Toggle Button (mobile only) -->
     <button
       id="sidebarToggle"
       class="sidebar-toggle"
-      aria-label="Close sidebar"
-      title="Close sidebar"
+      aria-label="Open sidebar"
+      title="Open sidebar"
     >
       ☰
     </button>
     <!-- Mobile Backdrop -->
     <div id="sidebarBackdrop" class="backdrop"></div>
 
-    <header class="sidebar">
-      <!-- Theme Toggle Button (inside sidebar) -->
-      <button
-        id="themeToggle"
-        class="theme-toggle"
-        aria-label="Toggle theme"
-        title="Toggle theme"
-      ></button>
-      <h2>Joshua Chau</h2>
+    <header class="sidebar" id="appSidebar">
+      <!-- Top: Expand/Collapse Button -->
+      <div class="sidebar-top">
+        <button
+          id="sidebarExpandBtn"
+          class="sidebar-expand-btn"
+          aria-label="Expand sidebar"
+          title="Expand sidebar"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <h2 class="sidebar-name">Joshua Chau</h2>
+
       <nav>
-        <a href="/">About</a>
-        <a href="/journal" class="active">Journal</a>
-        <a href="/professions">Professions</a>
-        <a href="/journey">Journey</a>
+        <a href="/">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+          </svg>
+          <span class="nav-label">About</span>
+        </a>
+        <a href="/journal/" class="active">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+            />
+          </svg>
+          <span class="nav-label">Journal</span>
+        </a>
+        <a href="/professions/">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"
+            />
+          </svg>
+          <span class="nav-label">Professions</span>
+        </a>
+        <a href="/journey/">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+            />
+          </svg>
+          <span class="nav-label">Journey</span>
+        </a>
       </nav>
-      <div class="sidebar-section-title">Journal Titles</div>
-      <ul id="titleList" class="title-list"></ul>
+
+      <!-- Bottom: Theme toggle + Avatar -->
+      <div class="sidebar-bottom">
+        <button
+          id="themeToggle"
+          class="theme-toggle"
+          aria-label="Toggle theme"
+          title="Toggle theme"
+        >
+          <span class="nav-icon">🌙</span>
+          <span class="nav-label">Dark mode</span>
+        </button>
+      </div>
     </header>
+    <script>
+      if (localStorage.getItem("sidebar-expanded") === "true") {
+        document.getElementById("appSidebar").classList.add("expanded");
+      }
+    </script>
 
     <div class="content-wrapper">
       <main>
         <section>
           <h1>Journal</h1>
           <p class="note">
-            This is where I’ll write reflections, thoughts, and short learning
+            This is where I'll write reflections, thoughts, and short learning
             notes.
           </p>
+
+          <!-- Journal Titles (moved from sidebar) -->
+          <div class="journal-titles-section">
+            <div class="sidebar-section-title">Journal Titles</div>
+            <ul id="titleList" class="title-list"></ul>
+          </div>
 
           <article class="entry">
             <h2>October 25, 2025 — Starting My Personal Webpage</h2>

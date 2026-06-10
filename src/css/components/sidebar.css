@@ -1,74 +1,344 @@
-/* ===== Sidebar Styling ===== */
+/* ===== Sidebar — Gemini-Inspired Icon Rail ===== */
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  width: 260px;
+  width: var(--sidebar-rail-width);
   background: var(--sidebar-bg);
   color: var(--sidebar-text);
-  padding: 4rem 1.5rem 2.5rem;
-  /* Increased top padding for toggle button */
   display: flex;
   flex-direction: column;
-  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
   z-index: 50;
-  overflow-y: auto;
+  overflow: hidden;
   transition:
-    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.28s cubic-bezier(0.4, 0, 0.2, 1),
     background-color 0.35s ease;
-  transform: translateX(0);
+  box-shadow: 1px 0 0 var(--sidebar-divider);
 }
 
+/* Expanded state (click toggle on desktop) */
 @media (min-width: 769px) {
-  body.sidebar-collapsed .sidebar {
-    transform: translateX(-100%);
+  .sidebar.expanded {
+    width: var(--sidebar-expanded-width);
+    box-shadow:
+      1px 0 0 var(--sidebar-divider),
+      4px 0 24px rgba(0, 0, 0, 0.2);
   }
 }
 
+/* ===== Sidebar Top Area ===== */
+.sidebar-top {
+  padding: 12px;
+  flex-shrink: 0;
+}
+
+.sidebar-expand-btn {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--sidebar-icon-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0;
+}
+
+.sidebar-expand-btn:hover {
+  background: var(--sidebar-link-hover-bg);
+  color: var(--sidebar-link-hover);
+}
+
+.sidebar-expand-btn:active {
+  transform: scale(0.92);
+}
+
+.sidebar-expand-btn svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+/* ===== Sidebar Name (visible only when expanded) ===== */
+.sidebar-name {
+  color: var(--sidebar-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 0 16px;
+  margin: 4px 0 8px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition:
+    opacity 0.2s ease 0s,
+    transform 0.2s ease 0s;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+}
+
+.sidebar.expanded .sidebar-name {
+  opacity: 1;
+  transform: translateX(0);
+  transition:
+    opacity 0.25s ease 0.1s,
+    transform 0.25s ease 0.1s;
+  pointer-events: auto;
+  height: auto;
+  margin: 4px 0 12px;
+}
+
+/* ===== Navigation Links ===== */
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px 12px;
+  flex: 1;
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--sidebar-link);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 10px;
+  border-radius: 24px;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  min-height: 44px;
+  box-sizing: border-box;
+}
+
+.sidebar nav a:active {
+  transform: scale(0.96);
+}
+
+.sidebar nav a .nav-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: var(--sidebar-icon-color);
+  transition: color 0.18s ease;
+}
+
+.sidebar nav a .nav-label {
+  opacity: 0;
+  transform: translateX(-6px);
+  transition:
+    opacity 0.15s ease 0s,
+    transform 0.15s ease 0s;
+}
+
+.sidebar.expanded nav a .nav-label {
+  opacity: 1;
+  transform: translateX(0);
+  transition:
+    opacity 0.2s ease 0.08s,
+    transform 0.2s ease 0.08s;
+  pointer-events: auto;
+}
+
+/* Hover state */
+.sidebar nav a:hover {
+  background: var(--sidebar-link-hover-bg);
+  color: var(--sidebar-link-hover);
+}
+
+.sidebar nav a:hover .nav-icon {
+  color: var(--sidebar-link-hover);
+}
+
+/* Active page state */
+.sidebar nav a.active {
+  background: var(--sidebar-link-active-bg);
+  color: var(--sidebar-link-active);
+  font-weight: 600;
+}
+
+.sidebar nav a.active .nav-icon {
+  color: var(--sidebar-icon-active);
+}
+
+/* ===== Sidebar Bottom Section ===== */
+.sidebar-bottom {
+  margin-top: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-top: 1px solid var(--sidebar-divider);
+  flex-shrink: 0;
+}
+
+/* Theme toggle styled as nav item */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--sidebar-link);
+  font-weight: 500;
+  font-size: 0.9rem;
+  font-family: inherit;
+  padding: 10px;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  min-height: 44px;
+  box-sizing: border-box;
+}
+
+.theme-toggle:active {
+  transform: scale(0.96);
+}
+
+.theme-toggle .nav-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: var(--sidebar-icon-color);
+  transition: color 0.18s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.theme-toggle .nav-label {
+  opacity: 0;
+  transform: translateX(-6px);
+  transition:
+    opacity 0.15s ease 0s,
+    transform 0.15s ease 0s;
+  pointer-events: none;
+}
+
+.sidebar.expanded .theme-toggle .nav-label {
+  opacity: 1;
+  transform: translateX(0);
+  transition:
+    opacity 0.2s ease 0.08s,
+    transform 0.2s ease 0.08s;
+  pointer-events: auto;
+}
+
+.theme-toggle:hover {
+  background: var(--sidebar-link-hover-bg);
+  color: var(--sidebar-link-hover);
+}
+
+.theme-toggle:hover .nav-icon {
+  color: var(--sidebar-link-hover);
+}
+
+/* ===== Sidebar Toggle Button (mobile only) ===== */
+.sidebar-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 60;
+  background: var(--toggle-bg);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+  font-size: 1.25rem;
+}
+
+.sidebar-toggle:hover {
+  background: var(--toggle-hover);
+  transform: scale(1.05);
+}
+
+.sidebar-toggle:active {
+  background: var(--toggle-active);
+  transform: scale(0.95);
+}
+
+/* ===== Backdrop for mobile ===== */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--backdrop-bg);
+  z-index: 40;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Desktop behavior ===== */
+@media (min-width: 769px) {
+  .sidebar-toggle {
+    display: none !important;
+  }
+
+  .sidebar {
+    transform: translateX(0);
+  }
+}
+
+/* ===== Mobile behavior ===== */
 @media (max-width: 768px) {
   .sidebar {
+    width: var(--sidebar-expanded-width);
     transform: translateX(-100%);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .sidebar-toggle {
+    display: flex;
   }
 
   body.sidebar-open .sidebar {
     transform: translateX(0);
   }
+
+  body.sidebar-open .backdrop {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* On mobile, always show labels (sidebar is full width when open) */
+  .sidebar .sidebar-name {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    height: auto;
+    margin: 4px 0 12px;
+  }
+
+  .sidebar nav a .nav-label,
+  .sidebar .theme-toggle .nav-label {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
 }
 
-.sidebar h2 {
-  color: var(--sidebar-heading);
-  margin-top: 0;
-  margin-bottom: 2rem;
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.sidebar nav {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.sidebar nav a {
-  color: var(--sidebar-link);
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-}
-
-.sidebar nav a:hover,
-.sidebar nav a.active {
-  background: var(--sidebar-link-hover-bg);
-  color: var(--sidebar-link-hover);
-  transform: translateX(4px);
-}
-
-/* Journal Titles integrated into Sidebar */
+/* ===== Journal Titles (now shown on the page, not sidebar) ===== */
 .sidebar-section-title {
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -104,95 +374,28 @@
   background: var(--sidebar-title-link-hover-bg);
 }
 
-/* ===== Sidebar Toggle Button ===== */
-.sidebar-toggle {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  z-index: 60;
-  background: var(--toggle-bg);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease;
-  font-size: 1.25rem;
+/* Journal titles on-page styling */
+.journal-titles-section {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 2px 4px -1px var(--card-shadow);
 }
 
-.sidebar-toggle:hover {
-  background: var(--toggle-hover);
-  transform: scale(1.05);
+.journal-titles-section .sidebar-section-title {
+  padding: 0;
+  margin-bottom: 0.75rem;
+  color: var(--text-muted);
 }
 
-.sidebar-toggle:active {
-  background: var(--toggle-active);
-  transform: scale(0.95);
+.journal-titles-section .title-list a {
+  color: var(--text-muted);
+  padding: 0.4rem 0.75rem;
 }
 
-/* ===== Theme Toggle Button (inside sidebar) ===== */
-.theme-toggle {
-  position: absolute;
-  top: 15px;
-  left: 60px;
-  z-index: 10;
-  background: var(--toggle-bg);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: all 0.25s ease;
-  font-size: 1.2rem;
-  line-height: 1;
+.journal-titles-section .title-list a:hover {
+  color: var(--heading);
+  background: var(--sidebar-link-hover-bg);
 }
-
-.theme-toggle::after {
-  content: "🌙";
-}
-
-[data-theme="dark"] .theme-toggle::after {
-  content: "☀️";
-}
-
-.theme-toggle:hover {
-  background: var(--toggle-hover);
-  transform: scale(1.1);
-}
-
-.theme-toggle:active {
-  background: var(--toggle-active);
-  transform: scale(0.95);
-}
-
-/* ===== Backdrop for mobile ===== */
-.backdrop {
-  position: fixed;
-  inset: 0;
-  background: var(--backdrop-bg);
-  z-index: 40;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@media (max-width: 768px) {
-  body.sidebar-open .backdrop {
-    opacity: 1;
-    pointer-events: auto;
-  }
-}
-
-/* ========================================
-   RESUME PAGE STYLES
-   ======================================== */
