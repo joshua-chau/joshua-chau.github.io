@@ -1,3 +1,8 @@
+/**
+ * Converts a string into a URL-friendly slug.
+ * @param {string} text - The string to slugify.
+ * @returns {string} The slugified string.
+ */
 export function slugify(text) {
   return text
     .toLowerCase()
@@ -7,6 +12,9 @@ export function slugify(text) {
     .trim();
 }
 
+/**
+ * Updates the footer copyright year to the current calendar year.
+ */
 export function updateYear() {
   const y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();

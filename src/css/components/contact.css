@@ -1,0 +1,71 @@
+/* ===== Mock Chat Contact ===== */
+.mock-chat-container {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 2px 8px var(--card-shadow);
+  transition: all 0.3s ease;
+}
+
+.mock-chat-container:focus-within {
+  border-color: #60a5fa;
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.2);
+}
+
+.mock-chat-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 80px;
+  outline: none;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+.mock-chat-contact-info {
+  min-height: unset;
+  border-bottom: 1px dashed var(--timeline-line);
+  margin-bottom: 0.5rem;
+}
+
+.mock-chat-input::placeholder {
+  color: var(--text-muted);
+}
+
+.mock-chat-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--timeline-line);
+}
+
+.mock-chat-hint {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.mock-chat-send {
+  margin-top: 0 !important;
+}
+
+/* Make it responsive */
+@media (max-width: 480px) {
+  .mock-chat-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .mock-chat-send {
+    width: 100%;
+    justify-content: center;
+  }
+}

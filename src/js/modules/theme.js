@@ -1,3 +1,7 @@
+/**
+ * Initializes theme toggling functionality (Light, Dark, Eye-protection).
+ * Saves user preference to localStorage and updates DOM classes and ARIA labels.
+ */
 export function initTheme() {
   const themeToggle = document.getElementById("themeToggle");
   const root = document.documentElement;

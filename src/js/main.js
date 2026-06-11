@@ -4,6 +4,7 @@ import { initJournal } from "./modules/journal.js";
 import { initAnimations } from "./modules/animations.js";
 import { initClipboard } from "./modules/clipboard.js";
 import { updateYear } from "./modules/utils.js";
+import { initContact } from "./modules/contact.js";
 
 // Initialize all modules
 initSidebar();
@@ -12,3 +13,4 @@ initJournal();
 initAnimations();
 initClipboard();
 updateYear();
+initContact();

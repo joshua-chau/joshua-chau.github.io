@@ -1,3 +1,7 @@
+/**
+ * Initializes IntersectionObserver animations for elements with the .fade-in class.
+ * Elements will receive the .visible class when they scroll into view.
+ */
 export function initAnimations() {
   const observer = new IntersectionObserver(
     (entries) => {

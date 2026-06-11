@@ -26,8 +26,8 @@
     <meta property="og:type" content="website" />
     <script>
       // Apply saved theme immediately to prevent flash of wrong theme
-      (function () {
-        var theme =
+      (() => {
+        const theme =
           localStorage.getItem("theme") ||
           (window.matchMedia("(prefers-color-scheme: dark)").matches
             ? "dark"

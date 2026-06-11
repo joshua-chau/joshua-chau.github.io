@@ -23,8 +23,8 @@
     <meta property="og:type" content="website" />
     <script>
       // Apply saved theme immediately to prevent flash of wrong theme
-      (function () {
-        var theme =
+      (() => {
+        const theme =
           localStorage.getItem("theme") ||
           (window.matchMedia("(prefers-color-scheme: dark)").matches
             ? "dark"
@@ -226,6 +226,27 @@
                   <div class="ht-desc">Learning and building the future.</div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact fade-in">
+          <h2>Contact</h2>
+          <p>
+            I'm always open to discussing new opportunities, tech, or just having a chat. Feel free to reach out!
+          </p>
+          <div class="mock-chat-container">
+            <input type="text" id="mockChatContact" class="mock-chat-input mock-chat-contact-info" placeholder="Your preferred contact method (optional)">
+            <textarea id="mockChatInput" class="mock-chat-input" placeholder="Type your message here..." rows="3"></textarea>
+            <div class="mock-chat-footer">
+              <span class="mock-chat-hint">Your message will be securely sent to my inbox. Thanks for your interest!</span>
+              <button id="mockChatSendBtn" class="primary-btn mock-chat-send">
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+                Send
+              </button>
             </div>
           </div>
         </section>

@@ -1,5 +1,9 @@
 import { slugify } from "./utils.js";
 
+/**
+ * Initializes the journal sidebar navigation by dynamically generating
+ * a list of links based on article headings within the page.
+ */
 export function initJournal() {
   const listEl = document.getElementById("titleList");
   if (listEl) {

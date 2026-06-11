@@ -1,3 +1,7 @@
+/**
+ * Initializes clipboard copying functionality for specific elements.
+ * Currently configured to copy the predefined email address when .copy-email-btn is clicked.
+ */
 export function initClipboard() {
   const copyEmailBtns = document.querySelectorAll(".copy-email-btn");
   copyEmailBtns.forEach((btn) => {

@@ -1,3 +1,7 @@
+/**
+ * Initializes sidebar toggling logic, including desktop expansion
+ * and mobile overlay handling. Automatically resets states on layout breaks.
+ */
 export function initSidebar() {
   const sidebar = document.querySelector(".sidebar");
   const sidebarToggle = document.getElementById("sidebarToggle");
@@ -86,12 +90,20 @@ export function initSidebar() {
     });
   }
 
-  // Reset state on resize
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 768) {
+  // Reset state on media query match (performance optimization over resize)
+  const mediaQuery = window.matchMedia("(min-width: 769px)");
+  const handleMediaChange = (e) => {
+    if (e.matches) {
       document.body.classList.remove("sidebar-open");
       if (sidebarToggle) sidebarToggle.textContent = "☰";
       updateMobileToggleLabel();
     }
-  });
+  };
+
+  if (mediaQuery.addEventListener) {
+    mediaQuery.addEventListener("change", handleMediaChange);
+  } else {
+    // Fallback for older browsers
+    mediaQuery.addListener(handleMediaChange);
+  }
 }
