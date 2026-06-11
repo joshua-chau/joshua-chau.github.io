@@ -82,3 +82,43 @@
   --linkedin-hover: #79c0ff;
   --note-color: #8b949e;
 }
+
+[data-theme="eye-protection"] {
+  --bg: #cce8cf;
+  --bg-glow: none;
+  --text: #203022;
+  --text-muted: #4a5c4c;
+  --heading: #0a1f0d;
+  --heading-secondary: #1a291c;
+  --card-bg: #dcf2e0;
+  --card-shadow: rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: rgba(0, 0, 0, 0.08);
+  --card-border: #b5d6b8;
+  --timeline-line: rgba(0, 0, 0, 0.08);
+  --sidebar-bg: #1e2b1f;
+  --sidebar-text: #c7edcc;
+  --sidebar-heading: #ffffff;
+  --sidebar-link: #8fa894;
+  --sidebar-link-hover-bg: rgba(255, 255, 255, 0.06);
+  --sidebar-link-hover: #ffffff;
+  --sidebar-link-active-bg: rgba(143, 168, 148, 0.2);
+  --sidebar-link-active: #c7edcc;
+  --sidebar-icon-color: #8fa894;
+  --sidebar-icon-active: #c7edcc;
+  --sidebar-section: #6a826e;
+  --sidebar-title-link: #8fa894;
+  --sidebar-title-link-hover: #ffffff;
+  --sidebar-title-link-hover-bg: rgba(255, 255, 255, 0.04);
+  --sidebar-rail-width: 68px;
+  --sidebar-expanded-width: 260px;
+  --sidebar-divider: rgba(255, 255, 255, 0.06);
+  --toggle-bg: #2a3b2b;
+  --toggle-hover: #3c523d;
+  --toggle-active: #4a634b;
+  --backdrop-bg: rgba(0, 0, 0, 0.4);
+  --github-color: rgb(99, 102, 241);
+  --github-hover: rgb(79, 70, 229);
+  --linkedin-color: rgb(10, 102, 194);
+  --linkedin-hover: rgb(0, 65, 130);
+  --note-color: #4a5c4c;
+}

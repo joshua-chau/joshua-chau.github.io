@@ -13,18 +13,27 @@ export function initTheme() {
   function applyTheme(theme) {
     root.setAttribute("data-theme", theme);
     if (themeToggle) {
-      themeToggle.title =
-        theme === "dark" ? "Switch to light mode" : "Switch to dark mode";
-      themeToggle.setAttribute(
-        "aria-label",
-        theme === "dark" ? "Switch to light mode" : "Switch to dark mode",
-      );
-      // Update the icon and label text
       const iconEl = themeToggle.querySelector(".nav-icon");
       const labelEl = themeToggle.querySelector(".nav-label");
-      if (iconEl) iconEl.textContent = theme === "dark" ? "☀️" : "🌙";
-      if (labelEl)
-        labelEl.textContent = theme === "dark" ? "Light mode" : "Dark mode";
+
+      let nextLabel, iconText;
+      if (theme === "light") {
+        nextLabel = "Dark mode";
+        iconText = "🌙";
+      } else if (theme === "dark") {
+        nextLabel = "Eye protection";
+        iconText = "🍃";
+      } else {
+        nextLabel = "Light mode";
+        iconText = "☀️";
+      }
+
+      const switchText = `Switch to ${nextLabel.toLowerCase()}`;
+      themeToggle.title = switchText;
+      themeToggle.setAttribute("aria-label", switchText);
+
+      if (iconEl) iconEl.textContent = iconText;
+      if (labelEl) labelEl.textContent = nextLabel;
     }
   }
 
@@ -33,7 +42,14 @@ export function initTheme() {
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
       const current = root.getAttribute("data-theme");
-      const next = current === "dark" ? "light" : "dark";
+      let next;
+      if (current === "light") {
+        next = "dark";
+      } else if (current === "dark") {
+        next = "eye-protection";
+      } else {
+        next = "light";
+      }
       localStorage.setItem("theme", next);
       applyTheme(next);
     });
