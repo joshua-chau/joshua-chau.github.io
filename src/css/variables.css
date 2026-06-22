@@ -15,7 +15,7 @@
   --sidebar-text: #e2e8f0;
   --sidebar-heading: #fff;
   --sidebar-link: #9ca3af;
-  --sidebar-link-hover-bg: rgba(255, 255, 255, 0.08);
+  --sidebar-link-hover-bg: hsla(254, 100%, 10%, 0.08);
   --sidebar-link-hover: #e2e8f0;
   --sidebar-link-active-bg: rgba(96, 165, 250, 0.15);
   --sidebar-link-active: #60a5fa;
@@ -60,7 +60,7 @@
   --sidebar-heading: #f0f6fc;
   --sidebar-link: #8b949e;
   --sidebar-link-hover-bg: rgba(255, 255, 255, 0.06);
-  --sidebar-link-hover: #e6edf3;
+  --sidebar-link-hover: #eff3e6;
   --sidebar-link-active-bg: rgba(88, 166, 255, 0.12);
   --sidebar-link-active: #58a6ff;
   --sidebar-icon-color: #8b949e;
@@ -99,7 +99,7 @@
   --sidebar-text: #c7edcc;
   --sidebar-heading: #ffffff;
   --sidebar-link: #8fa894;
-  --sidebar-link-hover-bg: rgba(255, 255, 255, 0.06);
+  --sidebar-link-hover-bg: hsla(129, 100%, 32%, 0.059);
   --sidebar-link-hover: #ffffff;
   --sidebar-link-active-bg: rgba(143, 168, 148, 0.2);
   --sidebar-link-active: #c7edcc;
@@ -113,7 +113,7 @@
   --sidebar-expanded-width: 260px;
   --sidebar-divider: rgba(255, 255, 255, 0.06);
   --toggle-bg: #2a3b2b;
-  --toggle-hover: #3c523d;
+  --toggle-hover: #52523c;
   --toggle-active: #4a634b;
   --backdrop-bg: rgba(0, 0, 0, 0.4);
   --github-color: rgb(99, 102, 241);
