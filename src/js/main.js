@@ -5,6 +5,7 @@ import { initAnimations } from "./modules/animations.js";
 import { initClipboard } from "./modules/clipboard.js";
 import { updateYear } from "./modules/utils.js";
 import { initContact } from "./modules/contact.js";
+import { initNodeGraph } from "./modules/node-graph.js";
 
 // Initialize all modules
 initSidebar();
@@ -14,3 +15,4 @@ initAnimations();
 initClipboard();
 updateYear();
 initContact();
+initNodeGraph();

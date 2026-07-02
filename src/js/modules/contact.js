@@ -22,8 +22,8 @@ export function initContact() {
     }
 
     const contactInfo = contactInput ? contactInput.value.trim() : "";
-    const finalMessage = contactInfo 
-      ? `Contact Info: ${contactInfo}\n\nMessage:\n${message}` 
+    const finalMessage = contactInfo
+      ? `Contact Info: ${contactInfo}\n\nMessage:\n${message}`
       : message;
 
     // Send via Web3Forms API
