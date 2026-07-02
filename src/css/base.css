@@ -39,6 +39,21 @@ body::before {
   z-index: 1;
 }
 
+/* ===== Entry Spotlight Overlay ===== */
+.content-wrapper::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  pointer-events: none;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.content-wrapper:has(.entry:hover)::after {
+  background: rgba(0, 0, 0, 0.5);
+}
+
 .entry {
   background: var(--card-bg);
   border-radius: 12px;
@@ -48,18 +63,20 @@ body::before {
     0 2px 4px -1px var(--card-shadow);
   border: 1px solid var(--card-border);
   margin: 2rem 0;
+  position: relative;
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
     background-color 0.35s ease,
     border-color 0.35s ease;
 }
 
 .entry:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px) scale(1.01);
   box-shadow:
-    0 10px 15px -3px var(--card-shadow-hover),
-    0 4px 6px -2px var(--card-shadow-hover);
+    0 20px 40px -8px var(--card-shadow-hover),
+    0 8px 16px -4px var(--card-shadow-hover);
+  z-index: 20;
 }
 
 .entry h2 {
