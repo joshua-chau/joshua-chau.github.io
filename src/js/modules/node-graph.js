@@ -340,25 +340,66 @@ function deselectCurrent(d3, gElement) {
 
 // ── Info Panel ───────────────────────────────────────────────────────────
 
+/**
+ * Populate and reveal the info panel for the given node.
+ * Uses safe DOM construction (textContent / createElement) to avoid XSS.
+ *
+ * @param {HTMLElement} panel - The info-panel container element.
+ * @param {object}      node  - The graph node datum.
+ */
 function showPanel(panel, node) {
   const colors = GROUP_COLORS[node.group] || GROUP_COLORS.root;
   const groupLabel = GROUP_LABELS[node.group] || node.group;
 
-  panel.innerHTML = `
-    <span class="graph-info-badge" style="background:${colors.fill};color:#fff">${groupLabel}</span>
-    <h3 class="graph-info-title">${node.label}</h3>
-    ${node.labelEn ? `<span class="graph-info-subtitle">${node.labelEn}</span>` : ""}
-    <p class="graph-info-desc">${node.desc}</p>
-  `;
+  // Clear previous content safely
+  panel.textContent = "";
+
+  // Badge
+  const badge = document.createElement("span");
+  badge.className = "graph-info-badge";
+  badge.style.background = colors.fill;
+  badge.style.color = "#fff";
+  badge.textContent = groupLabel;
+  panel.appendChild(badge);
+
+  // Title
+  const title = document.createElement("h3");
+  title.className = "graph-info-title";
+  title.textContent = node.label;
+  panel.appendChild(title);
+
+  // Subtitle (optional)
+  if (node.labelEn) {
+    const subtitle = document.createElement("span");
+    subtitle.className = "graph-info-subtitle";
+    subtitle.textContent = node.labelEn;
+    panel.appendChild(subtitle);
+  }
+
+  // Description
+  const desc = document.createElement("p");
+  desc.className = "graph-info-desc";
+  desc.textContent = node.desc;
+  panel.appendChild(desc);
+
   panel.classList.add("visible");
 }
 
+/** Hide the info panel. */
 function hidePanel(panel) {
   panel.classList.remove("visible");
 }
 
 // ── D3 Drag Behavior ────────────────────────────────────────────────────
 
+/**
+ * Creates a D3 drag behavior that pins a node while dragging and releases
+ * it when the gesture ends.
+ *
+ * @param {object} d3         - The D3 library namespace.
+ * @param {object} simulation - The active D3 force simulation.
+ * @returns {Function} A configured D3 drag behavior.
+ */
 function buildDrag(d3, simulation) {
   return d3
     .drag()
@@ -380,6 +421,12 @@ function buildDrag(d3, simulation) {
 
 // ── Node Styling ─────────────────────────────────────────────────────────
 
+/**
+ * Returns the fill color for a node based on its level and group.
+ *
+ * @param {object} d - Node datum with `level` and `group` properties.
+ * @returns {string} A CSS color string.
+ */
 function getNodeFill(d) {
   if (d.level === 0) return GROUP_COLORS.root.fill;
   const gc = GROUP_COLORS[d.group];
@@ -387,6 +434,12 @@ function getNodeFill(d) {
   return d.level === 1 ? gc.fill : gc.light;
 }
 
+/**
+ * Returns the stroke color for a node based on its level and group.
+ *
+ * @param {object} d - Node datum with `level` and `group` properties.
+ * @returns {string} A CSS color string or `"none"`.
+ */
 function getNodeStroke(d) {
   if (d.level === 0) return GROUP_COLORS.root.stroke;
   if (d.level === 2) return (GROUP_COLORS[d.group] || {}).fill || "#64748b";

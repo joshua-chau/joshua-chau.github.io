@@ -2,6 +2,7 @@
  * Initializes sidebar toggling logic, including desktop expansion
  * and mobile overlay handling. Automatically resets states on layout breaks.
  */
+import { MOBILE_BREAKPOINT, SIDEBAR_STORAGE_KEY } from "./constants.js";
 export function initSidebar() {
   const sidebar = document.querySelector(".sidebar");
   const sidebarToggle = document.getElementById("sidebarToggle");
@@ -11,7 +12,7 @@ export function initSidebar() {
   if (!sidebar) return;
 
   function isMobile() {
-    return window.innerWidth <= 768;
+    return window.innerWidth <= MOBILE_BREAKPOINT;
   }
 
   function updateMobileToggleLabel() {
@@ -37,7 +38,7 @@ export function initSidebar() {
   function toggleDesktopExpand() {
     sidebar.classList.toggle("expanded");
     const isExpanded = sidebar.classList.contains("expanded");
-    localStorage.setItem("sidebar-expanded", isExpanded ? "true" : "false");
+    localStorage.setItem(SIDEBAR_STORAGE_KEY, isExpanded ? "true" : "false");
     updateDesktopToggleLabel();
   }
 
@@ -91,7 +92,7 @@ export function initSidebar() {
   }
 
   // Reset state on media query match (performance optimization over resize)
-  const mediaQuery = window.matchMedia("(min-width: 769px)");
+  const mediaQuery = window.matchMedia(`(min-width: ${MOBILE_BREAKPOINT + 1}px)`);
   const handleMediaChange = (e) => {
     if (e.matches) {
       document.body.classList.remove("sidebar-open");

@@ -2,12 +2,21 @@
  * Initializes theme toggling functionality (Light, Dark, Eye-protection).
  * Saves user preference to localStorage and updates DOM classes and ARIA labels.
  */
+import { THEME_CYCLE, THEME_STORAGE_KEY } from "./constants.js";
+
+/** Map each theme to its button label and icon. */
+const THEME_UI = {
+  light:          { nextLabel: "Dark mode",       icon: "🌙" },
+  dark:           { nextLabel: "Eye protection",  icon: "🍃" },
+  "eye-protection": { nextLabel: "Light mode",    icon: "☀️" },
+};
+
 export function initTheme() {
   const themeToggle = document.getElementById("themeToggle");
   const root = document.documentElement;
 
   function getPreferredTheme() {
-    const saved = localStorage.getItem("theme");
+    const saved = localStorage.getItem(THEME_STORAGE_KEY);
     if (saved) return saved;
     return window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
@@ -20,24 +29,13 @@ export function initTheme() {
       const iconEl = themeToggle.querySelector(".nav-icon");
       const labelEl = themeToggle.querySelector(".nav-label");
 
-      let nextLabel, iconText;
-      if (theme === "light") {
-        nextLabel = "Dark mode";
-        iconText = "🌙";
-      } else if (theme === "dark") {
-        nextLabel = "Eye protection";
-        iconText = "🍃";
-      } else {
-        nextLabel = "Light mode";
-        iconText = "☀️";
-      }
-
-      const switchText = `Switch to ${nextLabel.toLowerCase()}`;
+      const ui = THEME_UI[theme] || THEME_UI.light;
+      const switchText = `Switch to ${ui.nextLabel.toLowerCase()}`;
       themeToggle.title = switchText;
       themeToggle.setAttribute("aria-label", switchText);
 
-      if (iconEl) iconEl.textContent = iconText;
-      if (labelEl) labelEl.textContent = nextLabel;
+      if (iconEl) iconEl.textContent = ui.icon;
+      if (labelEl) labelEl.textContent = ui.nextLabel;
     }
   }
 
@@ -46,15 +44,9 @@ export function initTheme() {
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
       const current = root.getAttribute("data-theme");
-      let next;
-      if (current === "light") {
-        next = "dark";
-      } else if (current === "dark") {
-        next = "eye-protection";
-      } else {
-        next = "light";
-      }
-      localStorage.setItem("theme", next);
+      const idx = THEME_CYCLE.indexOf(current);
+      const next = THEME_CYCLE[(idx + 1) % THEME_CYCLE.length];
+      localStorage.setItem(THEME_STORAGE_KEY, next);
       applyTheme(next);
     });
   }
@@ -63,7 +55,7 @@ export function initTheme() {
   window
     .matchMedia("(prefers-color-scheme: dark)")
     .addEventListener("change", (e) => {
-      if (!localStorage.getItem("theme")) {
+      if (!localStorage.getItem(THEME_STORAGE_KEY)) {
         applyTheme(e.matches ? "dark" : "light");
       }
     });

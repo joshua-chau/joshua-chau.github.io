@@ -2,12 +2,16 @@
  * Initializes clipboard copying functionality for specific elements.
  * Currently configured to copy the predefined email address when .copy-email-btn is clicked.
  */
+import { CONTACT_EMAIL } from "./constants.js";
+
 export function initClipboard() {
   const copyEmailBtns = document.querySelectorAll(".copy-email-btn");
   copyEmailBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
+      const email = btn.dataset.email || CONTACT_EMAIL;
+
       navigator.clipboard
-        .writeText("joshuatt.chau@mail.utoronto.ca")
+        .writeText(email)
         .then(() => {
           const textSpan = btn.querySelector(".email-text");
           if (!textSpan) return;
@@ -19,6 +23,9 @@ export function initClipboard() {
             textSpan.textContent = originalText;
             btn.style.color = "";
           }, 2000);
+        })
+        .catch((err) => {
+          console.warn("[clipboard] Failed to copy to clipboard:", err);
         });
     });
   });
